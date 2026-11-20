@@ -3,172 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ - Qəbul İmtahanı</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<title>Zogadiunarebi Qəbul İmtahanı - Qeydiyyat</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial}
-body{margin:0;background:#EEF2FF;min-height:100vh}
-.top{background:linear-gradient(135deg,#4F46E5,#7C3AED 50%,#DB2777);color:#fff;padding:34px 20px 55px;text-align:center;border-radius:0 0 32px 32px;position:relative;overflow:hidden}
-.top:before{content:"";position:absolute;width:220px;height:220px;background:rgba(255,255,255,.15);border-radius:50%;right:-60px;top:-80px}
-.top h1{margin:0;font-size:32px;font-weight:800;letter-spacing:-1px;position:relative}
-.top p{opacity:.9;margin:8px 0 0;font-size:14px;position:relative}
-.badge{display:inline-block;background:rgba(255,255,255,.22);padding:6px 12px;border-radius:100px;font-size:12px;font-weight:700;margin-top:14px;position:relative}
-.wrap{max-width:430px;margin:-28px auto 0;padding:0 16px 30px;position:relative}
-.card{background:#fff;padding:22px;border-radius:24px;box-shadow:0 10px 30px rgba(79,70,229,.12);margin-bottom:14px}
-.card h2{margin:0 0 4px;font-size:20px}
-.card small{color:#64748B}
-input{width:100%;padding:15px 16px;border:2px solid #E2E8F0;border-radius:14px;margin-top:12px;font-size:15px;outline:none;background:#F8FAFC}
-input:focus{border-color:#4F46E5;background:#fff}
-button{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:800;font-size:15px;margin-top:14px;cursor:pointer;box-shadow:0 8px 20px rgba(79,70,229,.3)}
+body{margin:0;min-height:100vh;background:linear-gradient(160deg,#0A1AFF 0%,#1E3AFF 30%,#FF1E3C 100%);padding:20px 14px 40px;position:relative;overflow-x:hidden}
+body:before{content:"";position:fixed;width:300px;height:300px;background:rgba(255,255,255,.15);border-radius:50%;top:-100px;right:-100px}
+body:after{content:"";position:fixed;width:250px;height:250px;background:rgba(255,30,60,.35);border-radius:50%;bottom:-80px;left:-80px}
+.header{text-align:center;color:#fff;margin:10px 0 18px;position:relative;z-index:2}
+.logoBox{width:72px;height:72px;margin:0 auto 10px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#0A1AFF;box-shadow:0 10px 25px rgba(0,0,0,.3);border:3px solid #FF1E3C}
+.logoBox span{color:#FF1E3C}
+.header h2{margin:0;font-size:22px;font-weight:800;line-height:1.2;text-shadow:0 4px 20px rgba(0,0,0,.3)}
+.header p{margin:6px 0 0;font-size:12px;opacity:.85;letter-spacing:3px}
+.card{max-width:430px;margin:0 auto;background:rgba(255,255,255,.97);padding:26px 22px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.35);position:relative;z-index:2}
+h1{text-align:center;margin:4px 0 18px;font-size:26px;color:#0A1AFF}
+h1 span{color:#FF1E3C}
+label{display:block;margin:14px 0 6px;font-size:13px;font-weight:700;color:#1E293B}
+input,select{width:100%;padding:14px 15px;border:2px solid #E0E7FF;border-radius:14px;font-size:15px;outline:none;background:#F0F3FF}
+input:focus,select:focus{border-color:#0A1AFF;background:#fff;box-shadow:0 0 0 3px rgba(10,26,255,.15)}
+.check{display:flex;gap:10px;align-items:flex-start;background:linear-gradient(90deg,#EEF2FF,#FFE4E6);padding:12px;border-radius:12px;margin-top:16px;font-size:13px;color:#475569;line-height:1.5}
+.check input{width:20px;height:20px;margin:0;accent-color:#FF1E3C}
+.check b{color:#0A1AFF}
+button{width:100%;padding:16px;border:0;border-radius:14px;background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff;font-weight:800;font-size:16px;margin-top:16px;cursor:pointer;box-shadow:0 10px 25px rgba(255,30,60,.4)}
 button:active{transform:scale(.98)}
-.goy{background:linear-gradient(135deg,#059669,#10B981);box-shadow:0 8px 20px rgba(5,150,105,.3)}
-.qirmizi{background:linear-gradient(135deg,#DC2626,#EF4444);box-shadow:0 8px 20px rgba(220,38,38,.25)}
-.boz{background:#F1F5F9;color:#334155;box-shadow:none}
-.link{text-align:center;margin-top:14px}
-.link a{color:#4F46E5;text-decoration:none;font-weight:700;font-size:14px}
-.wait{text-align:center;padding:28px 22px}
+.boz{background:#0F172A;box-shadow:none}
+.goy{background:linear-gradient(90deg,#0A1AFF,#2563EB)}
+.link{text-align:center;margin-top:14px;font-size:14px;color:#64748B}
+.link a{color:#FF1E3C;text-decoration:none;font-weight:800}
+.wait{text-align:center;padding:20px 0}
 .emoji{font-size:64px}
-.testCard{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border-radius:20px;margin-top:12px;box-shadow:0 4px 16px rgba(0,0,0,.06);cursor:pointer}
-.testIcon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.adminCard{background:#0F172A;color:#fff;padding:16px;border-radius:20px;margin-top:12px}
-.adminCard button{width:auto;padding:10px 14px;margin:8px 6px 0 0;font-size:13px}
-.stat{display:flex;gap:10px;margin-top:14px}
-.stat div{flex:1;background:#F8FAFC;padding:12px;border-radius:16px;text-align:center}
-.stat b{font-size:18px;display:block}
-.stat span{font-size:12px;color:#64748B}
+.badge{display:flex;gap:8px;margin-top:16px}
+.badge div{flex:1;text-align:center;padding:10px;border-radius:12px;font-size:12px;font-weight:700}
+.b1{background:#DBEAFE;color:#0A1AFF}
+.b2{background:#FEE2E2;color:#DC2626}
 </style>
 </head>
 <body>
-<div class="top">
-<div class="badge">✦ 2026 QƏBUL İMTAHANI ✦</div>
-<h1>📚 ZQİ Testlər</h1>
-<p>Ən güclü hazırlıq platforması</p>
+<div class="header">
+<div class="logoBox">ZQ<span>İ</span></div>
+<h2>Zogadiunarebi<br>Qəbul İmtahanı</h2>
+<p>QƏBUL • QİYMƏT • KEYFİYYƏT</p>
 </div>
-<div class="wrap">
 
 <div class="card" id="qeydiyyat">
-<h2>Xoş gəldin! 👋</h2><small>Hesab yarat, testlərə başla</small>
-<input id="ad" placeholder="👤 Adın">
-<input id="tel" placeholder="📱 Telefon nömrən">
-<input id="sifre" type="password" placeholder="🔒 Şifrə yarat">
-<button id="qeydBtn">Qeydiyyatdan keç ➡️</button>
-<div class="link"><a href="#" id="loginLink">Artıq hesabın var? Giriş et</a></div>
-<button class="boz" id="adminGirBtn">🛡️ Admin Paneli</button>
-</div>
-
-<div class="card" id="giris" style="display:none">
-<h2>Yenidən xoş gəldin! 🔥</h2><small>Hesabına giriş et</small>
-<input id="tel2" placeholder="📱 Telefon nömrən">
-<input id="sifre2" type="password" placeholder="🔒 Şifrən">
-<button id="girisBtn">Giriş et 🚀</button>
-<div class="link"><a href="#" id="qeydLink">Hesabın yoxdur? Qeydiyyatdan keç</a></div>
+<h1>Qeydiyyat <span>🔥</span></h1>
+<label>👤 İstifadəçi adı:</label>
+<input id="username" placeholder="məs: elvin_10">
+<label>🧑 Ad:</label>
+<input id="ad" placeholder="Adın">
+<label>👨‍👩‍👦 Soyad:</label>
+<input id="soyad" placeholder="Soyadın">
+<label>📱 Nömrə:</label>
+<input id="tel" placeholder="050 123 45 67">
+<label>🎓 Sinif:</label>
+<select id="sinif"><option value="">Sinif seçin</option><option>5-ci sinif</option><option>6-cı sinif</option><option>7-ci sinif</option><option>8-ci sinif</option><option>9-cu sinif</option><option>10-cu sinif</option><option>11-ci sinif</option></select>
+<label>📍 Bölgə:</label>
+<select id="bolge"><option value="">Bölgə seçin</option><option>Bakı</option><option>Gəncə</option><option>Sumqayıt</option><option>Qax</option><option>Zaqatala</option><option>Balakən</option><option>Qardabani</option><option>Marneuli</option><option>Bolnisi</option><option>Tbilisi</option><option>Qaçağan</option><option>Digər</option></select>
+<label>🔒 Şifrə:</label>
+<input id="sifre" type="password" placeholder="Şifrə yarat">
+<label class="check"><input type="checkbox" id="raziyam"><span>Mən <b>xidmət şərtləri</b> və <b>məxfilik siyasəti</b> ilə razıyam</span></label>
+<button id="qeydBtn">Qeydiyyatdan keçin ➡️</button>
+<div class="link">Artıq üzv olmusunuz? <a href="giris.html">Daxil olun</a></div>
+<div class="badge"><div class="b1">🔵 1000+ Şagird</div><div class="b2">🔴 45 Test</div></div>
 </div>
 
 <div class="card wait" id="gozle" style="display:none">
 <div class="emoji">⏳</div>
-<h2>İcazə gözlənilir...</h2>
-<p style="color:#64748B;line-height:1.6">Qeydiyyatın qəbul olundu.<br>Admin icazə verəndə girə biləcəksən.<br><b id="gozleAd"></b></p>
-<button class="goy" id="yenileBtn">Yenidən yoxla 🔄</button>
-<button class="boz" id="cix1">Başqa nömrə ilə gir</button>
+<h1>İcazə Gözlənilir...</h1>
+<p style="color:#64748B;line-height:1.6">Qeydiyyatın qəbul olundu.<br><b id="gozleAd"></b></p>
+<button class="goy" onclick="location.reload()">Yenidən yoxla 🔄</button>
+<button class="boz" onclick="localStorage.removeItem('zqi_myTel');location.reload()">Başqa nömrə ilə gir</button>
 </div>
 
-<div class="card wait" id="redd" style="display:none">
-<div class="emoji">⛔</div>
-<h2>Qeydiyyatın rədd olundu</h2>
-<button class="boz" id="cix2">Yenidən qeydiyyat</button>
-</div>
-
-<div id="esas" style="display:none">
-<h2 id="salam" style="margin:10px 0 0"></h2>
-<p style="color:#64748B;margin:6px 0 0">Bu gün hansı mövzunu gücləndirək?</p>
-<div class="stat"><div><b>3</b><span>Mövzu</span></div><div><b>45</b><span>Sual</span></div><div><b>🔥 12</b><span>Gün</span></div></div>
-<div class="testCard"><div class="testIcon" style="background:#DBEAFE">🔢</div><div><b>1. Natural ədədlər</b><br><small>15 sual • Asan</small></div><div style="margin-left:auto">➡️</div></div>
-<div class="testCard"><div class="testIcon" style="background:#DCFCE7">➕</div><div><b>2. Tam ədədlər</b><br><small>15 sual • Orta</small></div><div style="margin-left:auto">➡️</div></div>
-<div class="testCard"><div class="testIcon" style="background:#FEF3C7">➗</div><div><b>3. Kəsrlər</b><br><small>15 sual • Çətin</small></div><div style="margin-left:auto">➡️</div></div>
-<button class="boz" id="cix3">Çıxış</button>
-</div>
-
-<div class="card" id="adminLogin" style="display:none">
-<h2>🛡️ Admin Paneli</h2><small>Şifrə: <b>1234</b></small>
-<input id="adminSifre" type="password" placeholder="🔒 Admin şifrəsi">
-<button class="goy" id="adminGir">Gir 🚀</button>
-<button class="boz" id="adminGeri">← Geri</button>
-</div>
-
-<div id="adminPanel" style="display:none">
-<h2 style="margin:10px 0">🛡️ Admin Paneli</h2>
-<button class="boz" id="adminYenile">🔄 Yenilə</button>
-<button class="boz" id="adminCix">← Sayta qayıt</button>
-<div id="adminList"></div>
-</div>
-
-</div>
 <script>
 function al(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
 function saxla(u){ localStorage.setItem("zqi_users", JSON.stringify(u)); }
-function goster(id){
-  ["qeydiyyat","giris","gozle","redd","esas","adminLogin","adminPanel"].forEach(function(x){ document.getElementById(x).style.display="none"; });
-  document.getElementById(id).style.display="block";
-}
-function yoxla(){
-  var tel=localStorage.getItem("zqi_myTel");
-  if(!tel){ goster("qeydiyyat"); return; }
-  var u=al().find(function(x){ return x.tel==tel; });
-  if(!u){ goster("qeydiyyat"); return; }
-  if(u.status=="pending"){ document.getElementById("gozleAd").innerText=u.ad; goster("gozle"); }
-  else if(u.status=="approved"){ document.getElementById("salam").innerText="Salam, "+u.ad+" 👋"; goster("esas"); }
-  else if(u.status=="rejected"){ goster("redd"); }
-}
-function adminRender(){
-  var users=al(); var box=document.getElementById("adminList"); box.innerHTML="";
-  if(users.length==0){ box.innerHTML="<p style='background:#fff;padding:14px;border-radius:14px'>Heç kim yoxdur.</p>"; return; }
-  users.forEach(function(u,i){
-    var renk = u.status=="pending"?"🟡 GÖZLƏYİR":u.status=="approved"?"🟢 İCAZƏLİ":"🔴 RƏDD";
-    var d=document.createElement("div"); d.className="adminCard";
-    d.innerHTML="<b>"+u.ad+"</b> - "+renk+"<br>Tel: "+u.tel+"<br><small>"+(u.vaxt||"")+"</small>";
-    var b1=document.createElement("button"); b1.className="goy"; b1.innerText="✅ İcazə ver";
-    var b2=document.createElement("button"); b2.className="qirmizi"; b2.innerText="⛔ Rədd et";
-    var b3=document.createElement("button"); b3.className="boz"; b3.innerText="🗑️ Sil";
-    b1.onclick=function(){ users[i].status="approved"; saxla(users); adminRender(); };
-    b2.onclick=function(){ users[i].status="rejected"; saxla(users); adminRender(); };
-    b3.onclick=function(){ if(confirm("Silinsin?")){ users.splice(i,1); saxla(users); adminRender(); } };
-    d.appendChild(document.createElement("br")); d.appendChild(b1); d.appendChild(b2); d.appendChild(b3);
-    box.appendChild(d);
-  });
+var myTel = localStorage.getItem("zqi_myTel");
+if(myTel){
+  var u = al().find(function(x){ return x.tel==myTel; });
+  if(u && u.status=="pending"){
+    document.getElementById("qeydiyyat").style.display="none";
+    document.getElementById("gozle").style.display="block";
+    document.getElementById("gozleAd").innerText = u.ad+" "+u.soyad;
+  }
+  if(u && u.status=="approved"){ window.location.href="index.html"; }
 }
 document.getElementById("qeydBtn").onclick=function(){
+  var username=document.getElementById("username").value.trim();
   var ad=document.getElementById("ad").value.trim();
+  var soyad=document.getElementById("soyad").value.trim();
   var tel=document.getElementById("tel").value.trim();
+  var sinif=document.getElementById("sinif").value;
+  var bolge=document.getElementById("bolge").value;
   var sifre=document.getElementById("sifre").value.trim();
-  if(!ad||!tel||!sifre){ alert("Hamısını doldur!"); return; }
+  if(!username||!ad||!soyad||!tel||!sinif||!bolge||!sifre){ alert("Hamısını doldur!"); return; }
+  if(!document.getElementById("raziyam").checked){ alert("Zəhmət olmasa şərtlərlə razılaş!"); return; }
   var users=al();
-  if(users.find(function(x){ return x.tel==tel; })){ alert("Bu nömrə artıq var! Giriş et."); return; }
-  users.push({ad:ad,tel:tel,sifre:sifre,status:"pending",vaxt:new Date().toLocaleString()});
-  saxla(users); localStorage.setItem("zqi_myTel",tel); yoxla();
+  if(users.find(function(x){ return x.tel==tel || x.username==username; })){ alert("Bu nömrə və ya istifadəçi adı artıq var!"); return; }
+  users.push({username:username,ad:ad,soyad:soyad,tel:tel,sinif:sinif,bolge:bolge,sifre:sifre,status:"pending",vaxt:new Date().toLocaleString()});
+  saxla(users); localStorage.setItem("zqi_myTel",tel);
+  location.reload();
 };
-document.getElementById("girisBtn").onclick=function(){
-  var tel=document.getElementById("tel2").value.trim();
-  var sifre=document.getElementById("sifre2").value.trim();
-  var u=al().find(function(x){ return x.tel==tel && x.sifre==sifre; });
-  if(!u){ alert("Nömrə və ya şifrə səhvdir!"); return; }
-  localStorage.setItem("zqi_myTel",tel); yoxla();
-};
-document.getElementById("loginLink").onclick=function(e){ e.preventDefault(); goster("giris"); };
-document.getElementById("qeydLink").onclick=function(e){ e.preventDefault(); goster("qeydiyyat"); };
-document.getElementById("yenileBtn").onclick=yoxla;
-function cix(){ localStorage.removeItem("zqi_myTel"); goster("qeydiyyat"); }
-document.getElementById("cix1").onclick=cix;
-document.getElementById("cix2").onclick=cix;
-document.getElementById("cix3").onclick=cix;
-document.getElementById("adminGirBtn").onclick=function(){ goster("adminLogin"); };
-document.getElementById("adminGeri").onclick=function(){ goster("qeydiyyat"); };
-document.getElementById("adminCix").onclick=function(){ yoxla(); };
-document.getElementById("adminYenile").onclick=adminRender;
-document.getElementById("adminGir").onclick=function(){
-  if(document.getElementById("adminSifre").value=="1234"){ goster("adminPanel"); adminRender(); }
-  else alert("Şifrə səhvdir!");
-};
-yoxla();
 </script>
 </body>
 </html>
