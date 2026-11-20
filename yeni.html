@@ -3,145 +3,222 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ | Qeydiyyat</title>
+<title>ZQİ | Əsas Səhifə</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial}
-body{margin:0;min-height:100vh;background:linear-gradient(160deg,#0A1AFF 0%,#1E3AFF 30%,#FF1E3C 100%);padding:20px 14px 40px}
-.header{text-align:center;color:#fff;margin:10px 0 18px}
-.logoBox{width:74px;height:74px;margin:0 auto 10px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#0A1AFF;box-shadow:0 10px 25px rgba(0,0,0,.3);border:3px solid #FF1E3C}
-.logoBox span{color:#FF1E3C}
-.header h2{margin:0;font-size:22px;font-weight:800;line-height:1.2}
-.header p{margin:6px 0 0;font-size:12px;opacity:.85;letter-spacing:3px}
-.card{max-width:520px;margin:0 auto;background:#fff;padding:20px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-h1{margin:0 0 6px;font-size:22px;color:#0A1AFF}
-.sub{color:#64748B;font-size:13px;margin:0 0 14px}
-label{font-size:13px;font-weight:700;color:#334155;display:block;margin:12px 0 6px}
-input,select{width:100%;padding:14px;border:2px solid #E0E7FF;border-radius:14px;font-size:15px;outline:none;background:#F0F3FF}
-input:focus,select:focus{border-color:#0A1AFF;background:#fff}
-button{width:100%;padding:14px;border:0;border-radius:12px;font-weight:800;font-size:15px;cursor:pointer;margin-top:16px}
-.btnMain{background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff;box-shadow:0 10px 25px rgba(255,30,60,.35)}
-.btnBoz{background:#F1F5F9;color:#334155}
-.check{display:flex;gap:8px;align-items:flex-start;margin-top:14px;font-size:13px;color:#475569}
-.check input{width:18px;height:18px;margin:0;accent-color:#0A1AFF}
-.msg{padding:12px;border-radius:12px;font-size:14px;font-weight:700;text-align:center;display:none;margin-top:12px}
-.ok{background:#D1FAE5;color:#065F46}
-.err{background:#FEE2E2;color:#DC2626}
-.row2{display:flex;gap:10px}
-.row2>div{flex:1}
+body{margin:0;background:#0B1020;color:#fff;padding-bottom:90px;min-height:100vh}
+.top{padding:20px 16px 10px;display:flex;justify-content:space-between;align-items:center;max-width:520px;margin:0 auto}
+.logo{width:48px;height:48px;background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#0A1AFF}
+.logo span{color:#FF1E3C}
+.top b{font-size:16px;line-height:1.2;display:block}
+.top small{color:#8A93B2}
+.bell{width:40px;height:40px;background:#141A2E;border:1px solid #232B45;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:18px}
+.wrap{max-width:520px;margin:0 auto;padding:0 16px}
+.page{display:none}
+.page.aktiv{display:block}
+.hero{background:linear-gradient(135deg,#0A1AFF,#FF1E3C);border-radius:22px;padding:20px;margin-top:6px}
+.hero h1{margin:0;font-size:22px;line-height:1.25}
+.hero p{margin:8px 0 14px;opacity:.85;font-size:13px}
+.hero button{background:#fff;color:#0A1AFF;border:0;padding:12px 18px;border-radius:12px;font-weight:800;cursor:pointer}
+.card{background:#141A2E;border:1px solid #232B45;border-radius:20px;padding:16px;margin-top:14px}
+.card h3{margin:0 0 4px;font-size:16px}
+.card p{margin:0;color:#8A93B2;font-size:13px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:14px}
+.mini{background:#141A2E;border:1px solid #232B45;border-radius:16px;padding:14px;text-align:center}
+.mini b{font-size:20px;display:block}
+.mini span{font-size:12px;color:#8A93B2}
+input,select{width:100%;padding:13px;border:1px solid #232B45;border-radius:12px;background:#0B1020;color:#fff;outline:none;margin-bottom:10px}
+button{cursor:pointer}
+.btnMain{width:100%;padding:13px;border:0;border-radius:12px;background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff;font-weight:800}
+.btnBoz{width:100%;padding:12px;border:0;border-radius:12px;background:#1E2540;color:#CBD5E1;font-weight:700;margin-top:8px}
+.btnYasil{width:100%;padding:13px;border:0;border-radius:12px;background:#16A34A;color:#fff;font-weight:800}
+.lesson{display:flex;gap:12px;align-items:center;padding:12px 0;border-bottom:1px solid #1E2540}
+.lesson:last-child{border:0}
+.licon{width:46px;height:46px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.l1{background:#DBEAFE}.l2{background:#FEF3C7}.l3{background:#D1FAE5}.l4{background:#FEE2E2}.l5{background:#E0E7FF}
+.duelBox{text-align:center;padding:18px 10px}
+.vs{font-size:28px;font-weight:800;margin:14px 0;color:#FF1E3C}
+.player{background:#0B1020;border:1px solid #232B45;border-radius:16px;padding:14px;margin:8px 0}
+.player b{font-size:16px}
+.player span{color:#8A93B2;font-size:13px}
+.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0A1AFF,#FF1E3C);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 8px}
+.rowInfo{display:flex;justify-content:space-between;padding:11px 0;border-bottom:1px solid #1E2540;font-size:14px}
+.rowInfo span:first-child{color:#8A93B2}
+.rowInfo span:last-child{font-weight:700}
+.nav{position:fixed;bottom:0;left:0;right:0;background:#141A2E;border-top:1px solid #232B45;padding:10px 8px calc(10px + env(safe-area-inset-bottom));display:flex;z-index:99}
+.nav button{flex:1;background:none;border:0;color:#8A93B2;font-size:11px;font-weight:700;padding:6px 2px}
+.nav button.aktiv{color:#fff}
+.nav button i{display:block;font-size:20px;margin-bottom:2px;font-style:normal}
+#loginBox{max-width:520px;margin:20px auto;padding:0 16px}
+.msg{padding:12px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;display:none;margin-bottom:10px}
+.msg.ok{background:#14532D;color:#BBF7D0}
+.msg.err{background:#7F1D1D;color:#FECACA}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logoBox">ZQ<span>İ</span></div>
-<h2>Zogadiunarebi<br>Qəbul İmtahanı</h2>
-<p>QEYDİYYAT</p>
+
+<div class="top">
+<div style="display:flex;gap:10px;align-items:center">
+<div class="logo">ZQ<span>İ</span></div>
+<div><b>Zogadiunarebi<br>Qəbul İmtahanı</b><small id="helloTop">Xoş gəldin!</small></div>
+</div>
+<div class="bell">🔔</div>
 </div>
 
+<!-- GIRIS -->
+<div id="loginBox">
 <div class="card">
-<h1>Qeydiyyatdan keç 📝</h1>
-<p class="sub">Məlumatları düzgün yaz, admin təsdiqləyəndən sonra imtahana girə biləcəksən.</p>
-
-<label>Ad</label>
-<input id="ad" placeholder="Məs: Nika">
-
-<label>Soyad</label>
-<input id="soyad" placeholder="Məs: Həsənov">
-
-<label>Telefon nömrəsi</label>
-<input id="tel" type="tel" placeholder="Məs: 557632647">
-
-<label>İstifadəçi adı</label>
-<input id="username" placeholder="Məs: nika123">
-
-<label>Şifrə</label>
-<input id="password" type="password" placeholder="Şifrəni yaz">
-
-<div class="row2">
-<div>
-<label>Sinif</label>
-<select id="sinif">
-<option value="">Seç</option>
-<option>9-cu sinif</option>
-<option>10-cu sinif</option>
-<option>11-ci sinif</option>
-<option>12-ci sinif</option>
-<option>Məzun</option>
-</select>
-</div>
-<div>
-<label>Bölgə / Məktəb</label>
-<select id="bolge">
-<option value="">Seç</option>
-<option>Qaçağan</option>
-<option>Marneuli</option>
-<option>Bolnisi</option>
-<option>Dmanisi</option>
-<option>Tbilisi</option>
-<option>Digər</option>
-</select>
-</div>
-</div>
-
-<div class="check"><input type="checkbox" id="raziyam" checked><span>Qaydalara razıyam və məlumatlarımın düzgün olduğunu təsdiqləyirəm.</span></div>
-
+<h3>Giriş et 🔐</h3><p>Admin təsdiqlədikdən sonra girə bilərsən</p><br>
+<input id="lu" placeholder="İstifadəçi adı">
+<input id="lp" type="password" placeholder="Şifrə">
 <div id="msg" class="msg"></div>
+<button class="btnMain" onclick="giris()">Daxil ol</button>
+<button class="btnBoz" onclick="location.href='qeydiyyat.html'">Hesabım yoxdur - Qeydiyyat</button>
+</div>
+</div>
 
-<button class="btnMain" id="qeydBtn">Qeydiyyatdan keç ✅</button>
-<button class="btnBoz" onclick="location.href='yeni.html'">← Əsas səhifəyə qayıt</button>
-<p style="text-align:center;font-size:13px;color:#64748B;margin-top:12px">Artıq hesabın var? <a href="yeni.html" style="color:#0A1AFF;font-weight:800">Giriş et</a></p>
+<div class="wrap" id="app" style="display:none">
+
+<!-- ANA SEHIFE -->
+<div id="p-ana" class="page aktiv">
+<div class="hero">
+<h1>Sınaq imtahanına<br>hazırsan? 🔥</h1>
+<p>10 sual • 15 dəqiqə • Canlı reytinq</p>
+<button onclick="baslaImtahan()">İmtahana başla ➡️</button>
+</div>
+<div class="grid">
+<div class="mini"><b id="stXal">0</b><span>Xalın</span></div>
+<div class="mini"><b id="stDuel">0</b><span>Duel Qələbəsi</span></div>
+<div class="mini"><b id="stDers">4</b><span>Dərs</span></div>
+<div class="mini"><b>#<span id="stRey">--</span></b><span>Reytinq</span></div>
+</div>
+<div class="card"><h3>📢 Son Xəbər</h3><p style="margin-top:6px">Bu həftə Böyük Duel Turniri başlayır! Qalibə xüsusi ad veriləcək 🏆</p></div>
+<div class="card"><h3>🎯 Günün Tapşırığı</h3><p style="margin-top:6px">5 suala düz cavab ver, +50 xal qazan</p><button class="btnMain" style="margin-top:12px" onclick="baslaImtahan()">Tapşırığa başla</button></div>
+</div>
+
+<!-- DUEL -->
+<div id="p-duel" class="page">
+<div class="card"><h3>⚔️ Duel</h3><p>1-ə 1 döyüş - kim daha tez və düz cavab verər?</p></div>
+<div class="card duelBox">
+<div class="avatar" id="duelAvatar">?</div>
+<div class="player"><b id="duelAd">Sən</b><br><span>Xal: <span id="duelXal">0</span></span></div>
+<div class="vs">VS</div>
+<div class="player"><b>🎲 Rəqib axtarılır...</b><br><span>Random rəqib tapılacaq</span></div>
+<select id="duelFen"><option>Riyaziyyat</option><option>Azərbaycan dili</option><option>İngilis dili</option><option>Qarışıq</option></select>
+<button class="btnYasil" onclick="duelBasla()">⚔️ Duelə Başla</button>
+<p style="margin-top:10px;color:#8A93B2" id="duelNetice">Hələ duel oynamamısan</p>
+</div>
+<div class="card"><h3>🏆 Duel Reytinqi</h3>
+<div class="rowInfo"><span>1. Nika Həsənov</span><span>1250 xal</span></div>
+<div class="rowInfo"><span>2. Hüseyn Hüseynov</span><span>1100 xal</span></div>
+<div class="rowInfo"><span>3. Sən</span><span id="duelReyXal">0 xal</span></div>
+</div>
+</div>
+
+<!-- DERSLER -->
+<div id="p-ders" class="page">
+<div class="card"><h3>📚 Dərslər</h3><p>İmtahana hazırlaşmaq üçün dərslər</p></div>
+<div class="card" style="padding:6px 16px">
+<div class="lesson"><div class="licon l1">📐</div><div style="flex:1"><b>Riyaziyyat</b><p>12 dərs • 120 sual</p></div><button style="background:#0A1AFF;color:#fff;border:0;padding:8px 12px;border-radius:10px;font-weight:700" onclick="dersAc('Riyaziyyat')">Aç</button></div>
+<div class="lesson"><div class="licon l2">📖</div><div style="flex:1"><b>Azərbaycan dili</b><p>10 dərs • 90 sual</p></div><button style="background:#0A1AFF;color:#fff;border:0;padding:8px 12px;border-radius:10px;font-weight:700" onclick="dersAc('Azərbaycan dili')">Aç</button></div>
+<div class="lesson"><div class="licon l3">🇬🇧</div><div style="flex:1"><b>İngilis dili</b><p>8 dərs • 70 sual</p></div><button style="background:#0A1AFF;color:#fff;border:0;padding:8px 12px;border-radius:10px;font-weight:700" onclick="dersAc('İngilis dili')">Aç</button></div>
+<div class="lesson"><div class="licon l4">🧪</div><div style="flex:1"><b>Kimya / Biologiya</b><p>9 dərs • 80 sual</p></div><button style="background:#0A1AFF;color:#fff;border:0;padding:8px 12px;border-radius:10px;font-weight:700" onclick="dersAc('Kimya / Biologiya')">Aç</button></div>
+<div class="lesson"><div class="licon l5">🌍</div><div style="flex:1"><b>Tarix / Coğrafiya</b><p>7 dərs • 60 sual</p></div><button style="background:#0A1AFF;color:#fff;border:0;padding:8px 12px;border-radius:10px;font-weight:700" onclick="dersAc('Tarix / Coğrafiya')">Aç</button></div>
+</div>
+</div>
+
+<!-- PROFIL -->
+<div id="p-profil" class="page">
+<div class="card" style="text-align:center">
+<div class="avatar" id="profilAvatar">?</div>
+<b style="font-size:18px" id="profilAd">-</b><br>
+<span style="color:#8A93B2;font-size:13px" id="profilUser">@-</span><br>
+<span style="display:inline-block;margin-top:8px;background:#BBF7D0;color:#065F46;padding:5px 12px;border-radius:20px;font-size:12px;font-weight:800">✅ TƏSDİQLƏNİB</span>
+</div>
+<div class="card" style="padding:6px 16px">
+<div class="rowInfo"><span>📞 Telefon</span><span id="profilTel">-</span></div>
+<div class="rowInfo"><span>🎓 Sinif</span><span id="profilSinif">-</span></div>
+<div class="rowInfo"><span>📍 Bölgə</span><span id="profilBolge">-</span></div>
+<div class="rowInfo"><span>⭐ Xal</span><span id="profilXal">0</span></div>
+<div class="rowInfo"><span>⚔️ Duel qələbəsi</span><span id="profilDuel">0</span></div>
+</div>
+<button class="btnBoz" onclick="cixis()">Çıxış et</button>
+</div>
+
+</div>
+
+<!-- ALT MENU -->
+<div class="nav" id="navBar" style="display:none">
+<button class="aktiv" onclick="go('ana',this)"><i>🏠</i>Ana Səhifə</button>
+<button onclick="go('duel',this)"><i>⚔️</i>Duel</button>
+<button onclick="go('ders',this)"><i>📚</i>Dərslər</button>
+<button onclick="go('profil',this)"><i>👤</i>Profil</button>
 </div>
 
 <script>
-function goster(text, ok){
-  var m=document.getElementById('msg');
-  m.style.display='block';
-  m.className='msg '+(ok?'ok':'err');
-  m.innerText=text;
+function goster(t,ok){ var m=document.getElementById('msg'); m.style.display='block'; m.className='msg '+(ok?'ok':'err'); m.innerText=t; }
+function getUsers(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
+function giris(){
+  var u=document.getElementById('lu').value.trim();
+  var p=document.getElementById('lp').value.trim();
+  var user=getUsers().find(function(x){ return x.username==u && x.password==p; });
+  if(!user){ goster("❌ İstifadəçi adı və ya şifrə səhvdir!",false); return; }
+  if(user.status!='approved'){ goster("⏳ Hesabın hələ təsdiqlənməyib. Admin icazə verəndən sonra girə biləcəksən.",false); return; }
+  localStorage.setItem("zqi_current", JSON.stringify(user));
+  acApp(user);
 }
-document.getElementById('qeydBtn').onclick=function(){
-  var ad=document.getElementById('ad').value.trim();
-  var soyad=document.getElementById('soyad').value.trim();
-  var tel=document.getElementById('tel').value.trim();
-  var username=document.getElementById('username').value.trim();
-  var password=document.getElementById('password').value.trim();
-  var sinif=document.getElementById('sinif').value;
-  var bolge=document.getElementById('bolge').value;
-
-  if(!ad || !soyad || !tel || !username || !password){
-    goster("❌ Zəhmət olmasa bütün xanaları doldur!", false); return;
-  }
-  if(!document.getElementById('raziyam').checked){
-    goster("❌ Zəhmət olmasa qaydalara razı ol!", false); return;
-  }
-
-  // ARTıq YOXlama YOXDUR - eyni nömrə ilə də keçmək olar
-  var users=[];
-  try{ users=JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ users=[]; }
-
-  var yeni={
-    ad: ad,
-    soyad: soyad,
-    tel: tel,
-    username: username,
-    password: password,
-    sinif: sinif || "-",
-    bolge: bolge || "-",
-    status: "pending",
-    vaxt: new Date().toLocaleString("az-AZ")
-  };
-  users.push(yeni);
-  localStorage.setItem("zqi_users", JSON.stringify(users));
-
-  goster("✅ Uğurla qeydiyyatdan keçdin! Admin təsdiqləyəndən sonra girə biləcəksən.", true);
-  // Xanaları təmizlə
-  document.getElementById('ad').value="";
-  document.getElementById('soyad').value="";
-  document.getElementById('tel').value="";
-  document.getElementById('username').value="";
-  document.getElementById('password').value="";
-  setTimeout(function(){ location.href='yeni.html'; }, 2000);
-};
+function acApp(user){
+  document.getElementById('loginBox').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('navBar').style.display='flex';
+  document.getElementById('helloTop').innerText="Xoş gəldin, "+user.ad+"!";
+  document.getElementById('profilAd').innerText=user.ad+" "+user.soyad;
+  document.getElementById('profilUser').innerText="@"+user.username;
+  document.getElementById('profilTel').innerText=user.tel;
+  document.getElementById('profilSinif').innerText=user.sinif;
+  document.getElementById('profilBolge').innerText=user.bolge;
+  var ini=((user.ad||"")[0]||"?")+((user.soyad||"")[0]||"");
+  document.getElementById('profilAvatar').innerText=ini.toUpperCase();
+  document.getElementById('duelAvatar').innerText=ini.toUpperCase();
+  document.getElementById('duelAd').innerText=user.ad+" "+user.soyad;
+  var xal=parseInt(localStorage.getItem("zqi_xal_"+user.username)||"0");
+  document.getElementById('stXal').innerText=xal;
+  document.getElementById('profilXal').innerText=xal;
+  document.getElementById('duelXal').innerText=xal;
+  document.getElementById('duelReyXal').innerText=xal+" xal";
+  var dw=parseInt(localStorage.getItem("zqi_duel_"+user.username)||"0");
+  document.getElementById('stDuel').innerText=dw;
+  document.getElementById('profilDuel').innerText=dw;
+}
+function go(id,btn){
+  document.querySelectorAll('.page').forEach(function(p){ p.classList.remove('aktiv'); });
+  document.getElementById('p-'+id).classList.add('aktiv');
+  document.querySelectorAll('.nav button').forEach(function(b){ b.classList.remove('aktiv'); });
+  btn.classList.add('aktiv');
+  window.scrollTo(0,0);
+}
+function cixis(){ localStorage.removeItem("zqi_current"); location.reload(); }
+function baslaImtahan(){ alert("🎯 İmtahan başlayır! 10 sual səni gözləyir. Uğurlar!"); }
+function dersAc(ad){ alert("📚 "+ad+" dərsi açılır... Tezliklə dərslər əlavə olunacaq!"); }
+function duelBasla(){
+  var user=JSON.parse(localStorage.getItem("zqi_current")||"{}");
+  var fen=document.getElementById('duelFen').value;
+  document.getElementById('duelNetice').innerText="⏳ Rəqib axtarılır... "+fen;
+  setTimeout(function(){
+    var qazandim=Math.random()>0.4;
+    var xal=parseInt(localStorage.getItem("zqi_xal_"+user.username)||"0");
+    var dw=parseInt(localStorage.getItem("zqi_duel_"+user.username)||"0");
+    if(qazandim){ xal+=50; dw+=1; document.getElementById('duelNetice').innerText="🏆 QALİB GƏLDİN! +50 xal"; }
+    else { xal+=10; document.getElementById('duelNetice').innerText="😔 Bu dəfə olmadı. +10 xal"; }
+    localStorage.setItem("zqi_xal_"+user.username,xal);
+    localStorage.setItem("zqi_duel_"+user.username,dw);
+    acApp(user);
+  },1500);
+}
+// Avtomatik giriş
+var cur=null; try{ cur=JSON.parse(localStorage.getItem("zqi_current")||"null"); }catch(e){}
+if(cur){ acApp(cur); }
 </script>
 </body>
 </html>
