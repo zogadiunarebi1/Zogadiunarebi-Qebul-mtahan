@@ -3,74 +3,100 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ - Yeni Sayt</title>
+<title>ZQİ - Qəbul İmtahanı</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-body{margin:0;background:#f0f4ff;font-family:Arial}
-.wrap{max-width:420px;margin:auto;padding:16px}
-.top{background:linear-gradient(135deg,#007bff,#7b2ff7);color:#fff;text-align:center;padding:30px 10px;border-radius:0 0 30px 30px}
-.card{background:#fff;padding:20px;border-radius:20px;margin-top:15px;box-shadow:0 4px 15px rgba(0,0,0,0.08)}
-input{width:100%;padding:14px;border:2px solid #eee;border-radius:12px;margin-top:10px;font-size:16px;box-sizing:border-box}
-button{width:100%;padding:14px;border:0;border-radius:12px;background:#007bff;color:#fff;font-weight:bold;font-size:16px;margin-top:12px;cursor:pointer}
-.goy{background:#00c853}.qirmizi{background:#ff3b30}.boz{background:#eee;color:#333}
-.wait{text-align:center}
-.adminCard{background:#222;color:#fff;padding:16px;border-radius:16px;margin-top:12px}
-.adminCard button{width:auto;padding:10px 14px;margin-right:6px;margin-top:8px}
+*{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial}
+body{margin:0;background:#EEF2FF;min-height:100vh}
+.top{background:linear-gradient(135deg,#4F46E5,#7C3AED 50%,#DB2777);color:#fff;padding:34px 20px 55px;text-align:center;border-radius:0 0 32px 32px;position:relative;overflow:hidden}
+.top:before{content:"";position:absolute;width:220px;height:220px;background:rgba(255,255,255,.15);border-radius:50%;right:-60px;top:-80px}
+.top h1{margin:0;font-size:32px;font-weight:800;letter-spacing:-1px;position:relative}
+.top p{opacity:.9;margin:8px 0 0;font-size:14px;position:relative}
+.badge{display:inline-block;background:rgba(255,255,255,.22);padding:6px 12px;border-radius:100px;font-size:12px;font-weight:700;margin-top:14px;position:relative}
+.wrap{max-width:430px;margin:-28px auto 0;padding:0 16px 30px;position:relative}
+.card{background:#fff;padding:22px;border-radius:24px;box-shadow:0 10px 30px rgba(79,70,229,.12);margin-bottom:14px}
+.card h2{margin:0 0 4px;font-size:20px}
+.card small{color:#64748B}
+input{width:100%;padding:15px 16px;border:2px solid #E2E8F0;border-radius:14px;margin-top:12px;font-size:15px;outline:none;background:#F8FAFC}
+input:focus{border-color:#4F46E5;background:#fff}
+button{width:100%;padding:15px;border:0;border-radius:14px;background:linear-gradient(135deg,#4F46E5,#7C3AED);color:#fff;font-weight:800;font-size:15px;margin-top:14px;cursor:pointer;box-shadow:0 8px 20px rgba(79,70,229,.3)}
+button:active{transform:scale(.98)}
+.goy{background:linear-gradient(135deg,#059669,#10B981);box-shadow:0 8px 20px rgba(5,150,105,.3)}
+.qirmizi{background:linear-gradient(135deg,#DC2626,#EF4444);box-shadow:0 8px 20px rgba(220,38,38,.25)}
+.boz{background:#F1F5F9;color:#334155;box-shadow:none}
+.link{text-align:center;margin-top:14px}
+.link a{color:#4F46E5;text-decoration:none;font-weight:700;font-size:14px}
+.wait{text-align:center;padding:28px 22px}
+.emoji{font-size:64px}
+.testCard{display:flex;align-items:center;gap:14px;padding:16px;background:#fff;border-radius:20px;margin-top:12px;box-shadow:0 4px 16px rgba(0,0,0,.06);cursor:pointer}
+.testIcon{width:52px;height:52px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.adminCard{background:#0F172A;color:#fff;padding:16px;border-radius:20px;margin-top:12px}
+.adminCard button{width:auto;padding:10px 14px;margin:8px 6px 0 0;font-size:13px}
+.stat{display:flex;gap:10px;margin-top:14px}
+.stat div{flex:1;background:#F8FAFC;padding:12px;border-radius:16px;text-align:center}
+.stat b{font-size:18px;display:block}
+.stat span{font-size:12px;color:#64748B}
 </style>
 </head>
 <body>
-<div class="top"><h1 style="margin:0">📚 ZQİ Testlər</h1><p>Qeydiyyat • İcazə • Test</p></div>
+<div class="top">
+<div class="badge">✦ 2026 QƏBUL İMTAHANI ✦</div>
+<h1>📚 ZQİ Testlər</h1>
+<p>Ən güclü hazırlıq platforması</p>
+</div>
 <div class="wrap">
 
 <div class="card" id="qeydiyyat">
-<h2 style="margin:0">Qeydiyyatdan keç</h2>
-<input id="ad" placeholder="Adın">
-<input id="tel" placeholder="Telefon nömrən">
-<input id="sifre" type="password" placeholder="Şifrə yarat">
+<h2>Xoş gəldin! 👋</h2><small>Hesab yarat, testlərə başla</small>
+<input id="ad" placeholder="👤 Adın">
+<input id="tel" placeholder="📱 Telefon nömrən">
+<input id="sifre" type="password" placeholder="🔒 Şifrə yarat">
 <button id="qeydBtn">Qeydiyyatdan keç ➡️</button>
-<p style="text-align:center"><a href="#" id="loginLink">Artıq qeydiyyatdan keçmisən? Giriş et</a></p>
+<div class="link"><a href="#" id="loginLink">Artıq hesabın var? Giriş et</a></div>
 <button class="boz" id="adminGirBtn">🛡️ Admin Paneli</button>
 </div>
 
 <div class="card" id="giris" style="display:none">
-<h2 style="margin:0">Giriş</h2>
-<input id="tel2" placeholder="Telefon nömrən">
-<input id="sifre2" type="password" placeholder="Şifrən">
-<button id="girisBtn">Giriş et</button>
-<p style="text-align:center"><a href="#" id="qeydLink">Qeydiyyatdan keç</a></p>
+<h2>Yenidən xoş gəldin! 🔥</h2><small>Hesabına giriş et</small>
+<input id="tel2" placeholder="📱 Telefon nömrən">
+<input id="sifre2" type="password" placeholder="🔒 Şifrən">
+<button id="girisBtn">Giriş et 🚀</button>
+<div class="link"><a href="#" id="qeydLink">Hesabın yoxdur? Qeydiyyatdan keç</a></div>
 </div>
 
 <div class="card wait" id="gozle" style="display:none">
-<div style="font-size:60px">⏳</div>
-<h2>Adminnən İcazə Gözlənilir...</h2>
-<p>Qeydiyyatın qəbul olundu.<br>Admin icazə verəndə girə biləcəksən.<br><b id="gozleAd"></b></p>
+<div class="emoji">⏳</div>
+<h2>İcazə gözlənilir...</h2>
+<p style="color:#64748B;line-height:1.6">Qeydiyyatın qəbul olundu.<br>Admin icazə verəndə girə biləcəksən.<br><b id="gozleAd"></b></p>
 <button class="goy" id="yenileBtn">Yenidən yoxla 🔄</button>
 <button class="boz" id="cix1">Başqa nömrə ilə gir</button>
 </div>
 
 <div class="card wait" id="redd" style="display:none">
-<div style="font-size:60px">⛔</div>
+<div class="emoji">⛔</div>
 <h2>Qeydiyyatın rədd olundu</h2>
 <button class="boz" id="cix2">Yenidən qeydiyyat</button>
 </div>
 
 <div id="esas" style="display:none">
-<h2 id="salam"></h2>
-<div class="card">1. Natural ədədlər ➡️</div>
-<div class="card">2. Tam ədədlər ➡️</div>
-<div class="card">3. Kəsrlər ➡️</div>
+<h2 id="salam" style="margin:10px 0 0"></h2>
+<p style="color:#64748B;margin:6px 0 0">Bu gün hansı mövzunu gücləndirək?</p>
+<div class="stat"><div><b>3</b><span>Mövzu</span></div><div><b>45</b><span>Sual</span></div><div><b>🔥 12</b><span>Gün</span></div></div>
+<div class="testCard"><div class="testIcon" style="background:#DBEAFE">🔢</div><div><b>1. Natural ədədlər</b><br><small>15 sual • Asan</small></div><div style="margin-left:auto">➡️</div></div>
+<div class="testCard"><div class="testIcon" style="background:#DCFCE7">➕</div><div><b>2. Tam ədədlər</b><br><small>15 sual • Orta</small></div><div style="margin-left:auto">➡️</div></div>
+<div class="testCard"><div class="testIcon" style="background:#FEF3C7">➗</div><div><b>3. Kəsrlər</b><br><small>15 sual • Çətin</small></div><div style="margin-left:auto">➡️</div></div>
 <button class="boz" id="cix3">Çıxış</button>
 </div>
 
 <div class="card" id="adminLogin" style="display:none">
-<h2>🛡️ Admin Paneli</h2>
-<p>Şifrə: <b>1234</b></p>
-<input id="adminSifre" type="password" placeholder="Admin şifrəsi">
-<button class="goy" id="adminGir">Gir</button>
+<h2>🛡️ Admin Paneli</h2><small>Şifrə: <b>1234</b></small>
+<input id="adminSifre" type="password" placeholder="🔒 Admin şifrəsi">
+<button class="goy" id="adminGir">Gir 🚀</button>
 <button class="boz" id="adminGeri">← Geri</button>
 </div>
 
 <div id="adminPanel" style="display:none">
-<h2>🛡️ Admin Paneli</h2>
+<h2 style="margin:10px 0">🛡️ Admin Paneli</h2>
 <button class="boz" id="adminYenile">🔄 Yenilə</button>
 <button class="boz" id="adminCix">← Sayta qayıt</button>
 <div id="adminList"></div>
@@ -95,14 +121,14 @@ function yoxla(){
 }
 function adminRender(){
   var users=al(); var box=document.getElementById("adminList"); box.innerHTML="";
-  if(users.length==0){ box.innerHTML="<p style='background:#fff;padding:12px;border-radius:12px'>Heç kim yoxdur.</p>"; return; }
+  if(users.length==0){ box.innerHTML="<p style='background:#fff;padding:14px;border-radius:14px'>Heç kim yoxdur.</p>"; return; }
   users.forEach(function(u,i){
     var renk = u.status=="pending"?"🟡 GÖZLƏYİR":u.status=="approved"?"🟢 İCAZƏLİ":"🔴 RƏDD";
     var d=document.createElement("div"); d.className="adminCard";
-    d.innerHTML="<b>"+u.ad+"</b> - "+renk+"<br>Tel: "+u.tel+"<br>Vaxt: "+(u.vaxt||"");
-    var b1=document.createElement("button"); b1.className="goy"; b1.style.width="auto"; b1.innerText="✅ İcazə ver";
-    var b2=document.createElement("button"); b2.className="qirmizi"; b2.style.width="auto"; b2.innerText="⛔ Rədd et";
-    var b3=document.createElement("button"); b3.className="boz"; b3.style.width="auto"; b3.innerText="🗑️ Sil";
+    d.innerHTML="<b>"+u.ad+"</b> - "+renk+"<br>Tel: "+u.tel+"<br><small>"+(u.vaxt||"")+"</small>";
+    var b1=document.createElement("button"); b1.className="goy"; b1.innerText="✅ İcazə ver";
+    var b2=document.createElement("button"); b2.className="qirmizi"; b2.innerText="⛔ Rədd et";
+    var b3=document.createElement("button"); b3.className="boz"; b3.innerText="🗑️ Sil";
     b1.onclick=function(){ users[i].status="approved"; saxla(users); adminRender(); };
     b2.onclick=function(){ users[i].status="rejected"; saxla(users); adminRender(); };
     b3.onclick=function(){ if(confirm("Silinsin?")){ users.splice(i,1); saxla(users); adminRender(); } };
