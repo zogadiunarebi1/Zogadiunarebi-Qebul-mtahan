@@ -7,70 +7,81 @@
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial}
-body{margin:0;min-height:100vh;background:linear-gradient(160deg,#0A1AFF 0%,#1E3AFF 30%,#FF1E3C 100%);padding:20px 14px 40px}
-.header{text-align:center;color:#fff;margin:10px 0 18px}
-.logoBox{width:74px;height:74px;margin:0 auto 10px;background:#fff;border-radius:22px;display:flex;align-items:center;justify-content:center;font-size:30px;font-weight:800;color:#0A1AFF;box-shadow:0 10px 25px rgba(0,0,0,.3);border:3px solid #FF1E3C}
-.logoBox span{color:#FF1E3C}
-.header h2{margin:0;font-size:22px;font-weight:800;line-height:1.2}
-.header p{margin:6px 0 0;font-size:12px;opacity:.85;letter-spacing:3px}
-.card{max-width:520px;margin:0 auto;background:#fff;padding:20px;border-radius:28px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
-h1{margin:0 0 14px;font-size:22px;color:#0A1AFF}
-input{width:100%;padding:14px;border:2px solid #E0E7FF;border-radius:14px;font-size:15px;outline:none;background:#F0F3FF;margin-bottom:12px}
-input:focus{border-color:#0A1AFF;background:#fff}
-button{width:100%;padding:14px;border:0;border-radius:12px;font-weight:800;font-size:15px;cursor:pointer;margin-top:8px}
-.btnMain{background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff;box-shadow:0 10px 25px rgba(255,30,60,.35)}
-.btnBoz{background:#F1F5F9;color:#334155}
-.btnYasil{background:#059669;color:#fff}
+body{margin:0;min-height:100vh;background:#0B1020;padding:18px 14px 40px;color:#fff}
+.top{text-align:center;margin:8px 0 18px}
+.logo{width:62px;height:62px;margin:0 auto 10px;background:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#0A1AFF}
+.logo span{color:#FF1E3C}
+.top h2{margin:0;font-size:19px;font-weight:800;line-height:1.2}
+.top p{margin:6px 0 0;font-size:11px;opacity:.6;letter-spacing:3px}
+.card{max-width:520px;margin:0 auto;background:#141A2E;padding:20px;border-radius:24px;border:1px solid #232B45}
+h1{margin:0 0 6px;font-size:21px}
+.sub{color:#8A93B2;font-size:13px;margin:0 0 14px}
+input,select{width:100%;padding:13px;border:1px solid #232B45;border-radius:12px;font-size:14px;outline:none;background:#0B1020;color:#fff;margin-bottom:10px}
+input::placeholder{color:#64748B}
+button{width:100%;padding:13px;border:0;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;margin-top:8px}
+.btnMain{background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff}
+.btnBoz{background:#1E2540;color:#CBD5E1}
+.btnYasil{background:#16A34A;color:#fff}
 .btnQirmizi{background:#DC2626;color:#fff}
 .stats{display:flex;gap:8px;margin:14px 0}
-.stats div{flex:1;text-align:center;padding:12px 4px;border-radius:14px}
-.s1{background:#DBEAFE;color:#0A1AFF}
-.s2{background:#D1FAE5;color:#065F46}
-.s3{background:#FEE2E2;color:#DC2626}
+.stats div{flex:1;text-align:center;padding:12px 4px;border-radius:14px;background:#1E2540}
 .stats b{display:block;font-size:20px}
-.stats span{font-size:11px;font-weight:700}
-.tabs{display:flex;gap:6px;margin-bottom:12px}
-.tabs button{padding:10px 4px;font-size:12px;background:#F1F5F9;color:#64748B}
-.tabs button.aktiv{background:#0A1AFF;color:#fff}
-.user{background:#F8FAFC;border:2px solid #EEF2FF;padding:14px;border-radius:18px;margin-bottom:12px;line-height:1.7}
-.user b{font-size:17px;color:#0F172A}
-.user .info{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:10px;margin-top:8px;font-size:13px;color:#334155}
-.user .row{display:flex;gap:6px;margin-top:10px}
-.user .row button{margin:0;padding:10px 6px;font-size:13px}
+.stats span{font-size:11px;font-weight:700;color:#8A93B2}
+.tabs{display:flex;gap:6px;margin-bottom:10px}
+.tabs button{padding:10px 4px;font-size:12px;background:#1E2540;color:#8A93B2}
+.tabs button.aktiv{background:#fff;color:#0B1020}
+/* USER CARD - 1ci DIZAYN */
+.user{background:#0B1020;border:1px solid #232B45;border-radius:20px;padding:18px;margin-bottom:14px}
+.userHead{display:flex;gap:12px;align-items:center;margin-bottom:14px}
+.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0A1AFF,#FF1E3C);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0}
+.userHead b{font-size:17px;display:block;line-height:1.2}
+.badge{display:inline-block;padding:5px 10px;border-radius:20px;font-size:11px;font-weight:800;margin-top:5px}
+.badge.pending{background:#FDE68A;color:#92400E}
+.badge.approved{background:#BBF7D0;color:#065F46}
+.badge.rejected{background:#FECACA;color:#991B1B}
+.rowInfo{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #1E2540;font-size:14px}
+.rowInfo:last-child{border-bottom:0}
+.rowInfo .lbl{color:#8A93B2;display:flex;gap:8px;align-items:center}
+.rowInfo .val{font-weight:700;text-align:right;word-break:break-all}
+.iconBox{width:32px;height:32px;border-radius:9px;background:#1E2540;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
+.btnRow{display:flex;gap:8px;margin-top:14px}
+.btnRow button{margin:0;padding:12px 6px;font-size:13px}
+.btnSil{background:#1E2540;color:#94A3B8;width:52px;flex-shrink:0}
 </style>
 </head>
 <body>
-<div class="header">
-<div class="logoBox">ZQ<span>İ</span></div>
+<div class="top">
+<div class="logo">ZQ<span>İ</span></div>
 <h2>Zogadiunarebi<br>Qəbul İmtahanı</h2>
 <p>ADMIN PANELİ</p>
 </div>
 
 <div class="card" id="login">
-<h1>🛡️ Admin Girişi</h1>
-<p style="color:#64748B;font-size:14px">Zəhmət olmasa şifrəni daxil edin</p>
+<h1>Admin Girişi</h1>
+<p class="sub">Davam etmək üçün şifrəni daxil edin</p>
 <input id="sifre" type="password" placeholder="Şifrə">
-<button class="btnMain" id="girBtn">Daxil ol ➡️</button>
-<button class="btnBoz" onclick="location.href='qeydiyyat.html'">← Sayta qayıt</button>
+<button class="btnMain" id="girBtn">Daxil ol</button>
+<button class="btnBoz" onclick="location.href='qeydiyyat.html'">Sayta qayıt</button>
 </div>
 
 <div class="card" id="panel" style="display:none">
-<h1>🛡️ Admin Paneli</h1>
+<h1>Admin Paneli</h1>
+<p class="sub">Qeydiyyatdan keçən istifadəçilər</p>
 <div class="stats">
-<div class="s1"><b id="cemi">0</b><span>CƏMİ</span></div>
-<div class="s2"><b id="icazeli">0</b><span>İCAZƏLİ</span></div>
-<div class="s3"><b id="gozleyen">0</b><span>GÖZLƏYİR</span></div>
+<div><b id="cemi">0</b><span>CƏMİ</span></div>
+<div><b id="icazeli">0</b><span>İCAZƏLİ</span></div>
+<div><b id="gozleyen">0</b><span>GÖZLƏYİR</span></div>
 </div>
-<input id="axtar" placeholder="🔍 Ad, nömrə, istifadəçi adı ilə axtar...">
+<input id="axtar" placeholder="Axtar: ad, nömrə, istifadəçi adı...">
 <div class="tabs">
-<button id="t1" class="aktiv" onclick="setTab('pending')">⏳ Gözləyən</button>
-<button id="t2" onclick="setTab('approved')">✅ İcazəli</button>
-<button id="t3" onclick="setTab('rejected')">⛔ Rədd</button>
-<button id="t4" onclick="setTab('all')">👥 Hamısı</button>
+<button id="t1" class="aktiv" onclick="setTab('pending')">Gözləyən</button>
+<button id="t2" onclick="setTab('approved')">İcazəli</button>
+<button id="t3" onclick="setTab('rejected')">Rədd</button>
+<button id="t4" onclick="setTab('all')">Hamısı</button>
 </div>
-<button class="btnBoz" onclick="render()">🔄 Yenilə</button>
+<button class="btnBoz" onclick="render()">Yenilə</button>
 <div id="list" style="margin-top:14px"></div>
-<button class="btnBoz" onclick="location.href='qeydiyyat.html'">← Sayta qayıt</button>
+<button class="btnBoz" onclick="location.href='qeydiyyat.html'">Sayta qayıt</button>
 </div>
 
 <script>
@@ -78,6 +89,7 @@ var tab='pending';
 function al(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
 function saxla(u){ localStorage.setItem("zqi_users", JSON.stringify(u)); }
 function setTab(t){ tab=t; document.querySelectorAll('.tabs button').forEach(function(b){ b.classList.remove('aktiv'); }); if(t=='pending') document.getElementById('t1').classList.add('aktiv'); if(t=='approved') document.getElementById('t2').classList.add('aktiv'); if(t=='rejected') document.getElementById('t3').classList.add('aktiv'); if(t=='all') document.getElementById('t4').classList.add('aktiv'); render(); }
+function initials(ad,soyad){ var a=(ad||"")[0]||"?"; var s=(soyad||"")[0]||""; return (a+s).toUpperCase(); }
 function render(){
   var users=al();
   document.getElementById('cemi').innerText=users.length;
@@ -90,25 +102,28 @@ function render(){
     if(q && !( (u.ad+" "+u.soyad+" "+u.tel+" "+u.username).toLowerCase().includes(q) )) return false;
     return true;
   });
-  if(filt.length==0){ box.innerHTML="<p style='text-align:center;color:#64748B'>Heç kim qeydiyyatdan keçməyib.</p>"; return; }
+  if(filt.length==0){ box.innerHTML="<p style='text-align:center;color:#8A93B2'>Heç kim yoxdur.</p>"; return; }
   filt.forEach(function(u){
     var idx=users.indexOf(u);
-    var renk = u.status=='pending'?"🟡 GÖZLƏYİR":u.status=='approved'?"🟢 İCAZƏLİ":"🔴 RƏDD";
+    var badgeClass = u.status=='pending'?"pending":u.status=='approved'?"approved":"rejected";
+    var badgeText = u.status=='pending'?"GÖZLƏYİR":u.status=='approved'?"İCAZƏLİ":"RƏDD EDİLDİ";
     var d=document.createElement("div"); d.className="user";
-    d.innerHTML="<b>"+(u.ad||"-")+" "+(u.soyad||"")+"</b> - "+renk+
-    "<div class='info'>"+
-    "👤 <b>Ad Soyad:</b> "+(u.ad||"-")+" "+(u.soyad||"")+"<br>"+
-    "📱 <b>Telefon:</b> "+(u.tel||"-")+"<br>"+
-    "🆔 <b>İstifadəçi adı:</b> @"+(u.username||"-")+"<br>"+
-    "🔑 <b>Şifrəsi:</b> "+(u.password||"-")+"<br>"+
-    "🎓 <b>Sinif:</b> "+(u.sinif||"-")+"<br>"+
-    "📍 <b>Bölgə / Məktəb:</b> "+(u.bolge||"-")+"<br>"+
-    "🕒 <b>Qeydiyyat vaxtı:</b> "+(u.vaxt||"-")+
-    "</div><div class='row'></div>";
-    var row=d.querySelector('.row');
-    var b1=document.createElement("button"); b1.className="btnYasil"; b1.innerText="✅ İcazə ver";
-    var b2=document.createElement("button"); b2.className="btnQirmizi"; b2.innerText="⛔ Rədd";
-    var b3=document.createElement("button"); b3.className="btnBoz"; b3.innerText="🗑️";
+    d.innerHTML=
+    "<div class='userHead'>"+
+      "<div class='avatar'>"+initials(u.ad,u.soyad)+"</div>"+
+      "<div><b>"+(u.ad||"-")+" "+(u.soyad||"")+"</b><span class='badge "+badgeClass+"'>"+badgeText+"</span></div>"+
+    "</div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>📞</span>Telefon</span><span class='val'>"+(u.tel||"-")+"</span></div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>👤</span>İstifadəçi adı</span><span class='val'>@"+(u.username||"-")+"</span></div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🔒</span>Şifrəsi</span><span class='val'>"+(u.password||"-")+"</span></div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🎓</span>Sinif</span><span class='val'>"+(u.sinif||"-")+"</span></div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>📍</span>Bölgə / Məktəb</span><span class='val'>"+(u.bolge||"-")+"</span></div>"+
+    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🕒</span>Qeydiyyat vaxtı</span><span class='val'>"+(u.vaxt||"-")+"</span></div>"+
+    "<div class='btnRow'></div>";
+    var row=d.querySelector('.btnRow');
+    var b1=document.createElement("button"); b1.className="btnYasil"; b1.innerText="İcazə ver";
+    var b2=document.createElement("button"); b2.className="btnQirmizi"; b2.innerText="Rədd et";
+    var b3=document.createElement("button"); b3.className="btnSil"; b3.innerText="🗑️";
     b1.onclick=function(){ users[idx].status="approved"; saxla(users); render(); };
     b2.onclick=function(){ users[idx].status="rejected"; saxla(users); render(); };
     b3.onclick=function(){ if(confirm("Silinsin? "+u.ad)){ users.splice(idx,1); saxla(users); render(); } };
