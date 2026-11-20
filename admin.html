@@ -34,7 +34,6 @@ button{width:100%;padding:14px;border:0;border-radius:12px;font-weight:800;font-
 .tabs button.aktiv{background:#0A1AFF;color:#fff}
 .user{background:#F8FAFC;border:2px solid #EEF2FF;padding:14px;border-radius:18px;margin-bottom:12px;line-height:1.7}
 .user b{font-size:17px;color:#0F172A}
-.user small{color:#475569;font-size:13px}
 .user .info{background:#fff;border:1px solid #E2E8F0;border-radius:12px;padding:10px;margin-top:8px;font-size:13px;color:#334155}
 .user .row{display:flex;gap:6px;margin-top:10px}
 .user .row button{margin:0;padding:10px 6px;font-size:13px}
@@ -79,7 +78,6 @@ var tab='pending';
 function al(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
 function saxla(u){ localStorage.setItem("zqi_users", JSON.stringify(u)); }
 function setTab(t){ tab=t; document.querySelectorAll('.tabs button').forEach(function(b){ b.classList.remove('aktiv'); }); if(t=='pending') document.getElementById('t1').classList.add('aktiv'); if(t=='approved') document.getElementById('t2').classList.add('aktiv'); if(t=='rejected') document.getElementById('t3').classList.add('aktiv'); if(t=='all') document.getElementById('t4').classList.add('aktiv'); render(); }
-
 function render(){
   var users=al();
   document.getElementById('cemi').innerText=users.length;
