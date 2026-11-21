@@ -3,142 +3,133 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ | Admin Paneli</title>
+<title>ZQİ | Əsas Səhifə</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial}
-body{margin:0;min-height:100vh;background:#0B1020;padding:18px 14px 40px;color:#fff}
-.top{text-align:center;margin:8px 0 18px}
-.logo{width:62px;height:62px;margin:0 auto 10px;background:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;color:#0A1AFF}
-.logo span{color:#FF1E3C}
-.top h2{margin:0;font-size:19px;font-weight:800;line-height:1.2}
-.top p{margin:6px 0 0;font-size:11px;opacity:.6;letter-spacing:3px}
-.card{max-width:520px;margin:0 auto;background:#141A2E;padding:20px;border-radius:24px;border:1px solid #232B45}
-h1{margin:0 0 6px;font-size:21px}
-.sub{color:#8A93B2;font-size:13px;margin:0 0 14px}
-input,select{width:100%;padding:13px;border:1px solid #232B45;border-radius:12px;font-size:14px;outline:none;background:#0B1020;color:#fff;margin-bottom:10px}
-input::placeholder{color:#64748B}
-button{width:100%;padding:13px;border:0;border-radius:12px;font-weight:800;font-size:14px;cursor:pointer;margin-top:8px}
-.btnMain{background:linear-gradient(90deg,#0A1AFF,#FF1E3C);color:#fff}
-.btnBoz{background:#1E2540;color:#CBD5E1}
-.btnYasil{background:#16A34A;color:#fff}
-.btnQirmizi{background:#DC2626;color:#fff}
-.stats{display:flex;gap:8px;margin:14px 0}
-.stats div{flex:1;text-align:center;padding:12px 4px;border-radius:14px;background:#1E2540}
-.stats b{display:block;font-size:20px}
-.stats span{font-size:11px;font-weight:700;color:#8A93B2}
-.tabs{display:flex;gap:6px;margin-bottom:10px}
-.tabs button{padding:10px 4px;font-size:12px;background:#1E2540;color:#8A93B2}
-.tabs button.aktiv{background:#fff;color:#0B1020}
-/* USER CARD - 1ci DIZAYN */
-.user{background:#0B1020;border:1px solid #232B45;border-radius:20px;padding:18px;margin-bottom:14px}
-.userHead{display:flex;gap:12px;align-items:center;margin-bottom:14px}
-.avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#0A1AFF,#FF1E3C);display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;color:#fff;flex-shrink:0}
-.userHead b{font-size:17px;display:block;line-height:1.2}
-.badge{display:inline-block;padding:5px 10px;border-radius:20px;font-size:11px;font-weight:800;margin-top:5px}
-.badge.pending{background:#FDE68A;color:#92400E}
-.badge.approved{background:#BBF7D0;color:#065F46}
-.badge.rejected{background:#FECACA;color:#991B1B}
-.rowInfo{display:flex;justify-content:space-between;align-items:center;padding:11px 0;border-bottom:1px solid #1E2540;font-size:14px}
-.rowInfo:last-child{border-bottom:0}
-.rowInfo .lbl{color:#8A93B2;display:flex;gap:8px;align-items:center}
-.rowInfo .val{font-weight:700;text-align:right;word-break:break-all}
-.iconBox{width:32px;height:32px;border-radius:9px;background:#1E2540;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0}
-.btnRow{display:flex;gap:8px;margin-top:14px}
-.btnRow button{margin:0;padding:12px 6px;font-size:13px}
-.btnSil{background:#1E2540;color:#94A3B8;width:52px;flex-shrink:0}
+*{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial;margin:0}
+body{background:#F6F7FB;color:#111827;padding-bottom:30px}
+.wrap{max-width:480px;margin:0 auto;padding:0 16px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px}
+.logoBox{display:flex;gap:10px;align-items:center}
+.logo{width:46px;height:46px;background:#111827;color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px}
+.logo span{color:#FF3B30}
+.logoBox b{font-size:15px;line-height:1.2;display:block}
+.logoBox small{color:#6B7280;font-size:12px}
+.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#DC2626);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
+h1{font-size:26px;line-height:1.2;margin:4px 0 6px}
+h1 span{color:#2563EB}
+.sub{color:#6B7280;font-size:14px}
+.search{margin:16px 0;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:13px 14px;display:flex;gap:8px;align-items:center;color:#9CA3AF;font-size:14px}
+.search input{border:0;outline:none;width:100%;font-size:14px}
+.hero{background:#111827;color:#fff;border-radius:22px;padding:20px;margin-top:4px;display:flex;gap:14px;align-items:center}
+.heroText{flex:1}
+.heroText small{background:#2563EB;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:700}
+.heroText h2{font-size:20px;margin:10px 0 6px;line-height:1.3}
+.heroText p{font-size:13px;opacity:.7;line-height:1.4}
+.heroText button{margin-top:12px;background:#fff;color:#111827;border:0;padding:11px 16px;border-radius:11px;font-weight:800;cursor:pointer}
+.heroImg{width:82px;height:82px;background:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:38px;flex-shrink:0}
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.stat{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:14px;display:flex;gap:11px;align-items:center}
+.stat .ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.stat b{font-size:18px;display:block}
+.stat span{font-size:12px;color:#6B7280}
+.secHead{display:flex;justify-content:space-between;align-items:center;margin:20px 0 12px}
+.secHead h3{font-size:17px}
+.lesson{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;margin-bottom:10px}
+.lesson .lic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.lesson b{font-size:15px;display:block}
+.lesson p{font-size:12px;color:#6B7280;margin-top:2px}
+.lesson .faiz{margin-left:auto;text-align:right}
+.lesson .faiz b{color:#2563EB;font-size:14px}
+.bar{width:70px;height:6px;background:#E5E7EB;border-radius:10px;overflow:hidden;margin-top:5px}
+.bar i{display:block;height:100%;background:#2563EB;border-radius:10px}
+.card{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:16px;margin-top:14px}
+.card h3{font-size:16px}
+.card p{color:#6B7280;font-size:13px;margin-top:4px}
+input{width:100%;padding:13px;border:1px solid #E5E7EB;border-radius:12px;outline:none;margin-bottom:10px;font-size:14px}
+.btnMain{width:100%;padding:13px;border:0;border-radius:12px;background:#111827;color:#fff;font-weight:800;cursor:pointer}
+.btnBoz{width:100%;padding:12px;border:0;border-radius:12px;background:#EEF2FF;color:#2563EB;font-weight:800;margin-top:8px;cursor:pointer}
+.msg{padding:11px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;display:none;margin-bottom:10px;background:#FEE2E2;color:#991B1B}
 </style>
 </head>
 <body>
+<div class="wrap">
+
+<!-- GİRİŞ -->
+<div id="loginBox">
+<div style="text-align:center;padding:20px 0 10px"><div class="logo" style="margin:0 auto">ZQ<span>İ</span></div><h1 style="font-size:22px;margin-top:10px">Xoş gəldin!</h1><p class="sub">Admin təsdiqlədikdən sonra girə bilərsən</p></div>
+<div class="card">
+<input id="lu" placeholder="İstifadəçi adı">
+<input id="lp" type="password" placeholder="Şifrə">
+<div id="msg" class="msg"></div>
+<button class="btnMain" onclick="giris()">Daxil ol</button>
+<!-- DÜZƏLDİLMİŞ DÜYMƏ - TAM LİNK -->
+<button class="btnBoz" onclick="getQeydiyyat()">Hesabım yoxdur - Qeydiyyat</button>
+</div>
+</div>
+
+<!-- ƏSAS SƏHİFƏ -->
+<div id="app" style="display:none">
 <div class="top">
-<div class="logo">ZQ<span>İ</span></div>
-<h2>Zogadiunarebi<br>Qəbul İmtahanı</h2>
-<p>ADMIN PANELİ</p>
+<div class="logoBox"><div class="logo">ZQ<span>İ</span></div><div><b>Zogadiunarebi</b><small>Qəbul İmtahanı</small></div></div>
+<div class="avatar" id="avatar">H</div>
 </div>
 
-<div class="card" id="login">
-<h1>Admin Girişi</h1>
-<p class="sub">Davam etmək üçün şifrəni daxil edin</p>
-<input id="sifre" type="password" placeholder="Şifrə">
-<button class="btnMain" id="girBtn">Daxil ol</button>
-<button class="btnBoz" onclick="location.href='qeydiyyat.html'">Sayta qayıt</button>
+<h1>Salam, <span id="ad">Hüseyn</span> 👋</h1>
+<p class="sub">Bu gün imtahana bir addım daha yaxınlaş.</p>
+
+<div class="search">🔍 <input placeholder="Dərs, mövzu axtar..."></div>
+
+<div class="hero">
+<div class="heroText">
+<small>🔥 GÜNÜN SINAĞI</small>
+<h2>10 sual, 15 dəqiqə<br>Özünü yoxla!</h2>
+<p>İndi başla və reytinqdə yüksəl.</p>
+<button onclick="alert('Sınaq başlayır!')">Sınağa Başla →</button>
+</div>
+<div class="heroImg">🎯</div>
 </div>
 
-<div class="card" id="panel" style="display:none">
-<h1>Admin Paneli</h1>
-<p class="sub">Qeydiyyatdan keçən istifadəçilər</p>
 <div class="stats">
-<div><b id="cemi">0</b><span>CƏMİ</span></div>
-<div><b id="icazeli">0</b><span>İCAZƏLİ</span></div>
-<div><b id="gozleyen">0</b><span>GÖZLƏYİR</span></div>
+<div class="stat"><div class="ic" style="background:#DBEAFE">⭐</div><div><b id="xal">0</b><span>Ümumi Xal</span></div></div>
+<div class="stat"><div class="ic" style="background:#FEE2E2">🏆</div><div><b>#12</b><span>Reytinq</span></div></div>
+<div class="stat"><div class="ic" style="background:#D1FAE5">✅</div><div><b>24</b><span>Düz Cavab</span></div></div>
+<div class="stat"><div class="ic" style="background:#FEF3C7">🔥</div><div><b>5 gün</b><span>Ardıcıl</span></div></div>
 </div>
-<input id="axtar" placeholder="Axtar: ad, nömrə, istifadəçi adı...">
-<div class="tabs">
-<button id="t1" class="aktiv" onclick="setTab('pending')">Gözləyən</button>
-<button id="t2" onclick="setTab('approved')">İcazəli</button>
-<button id="t3" onclick="setTab('rejected')">Rədd</button>
-<button id="t4" onclick="setTab('all')">Hamısı</button>
+
+<div class="secHead"><h3>Dərslər</h3></div>
+<div class="lesson"><div class="lic" style="background:#DBEAFE">📐</div><div><b>Riyaziyyat</b><p>12 dərs • 120 sual</p></div><div class="faiz"><b>65%</b><div class="bar"><i style="width:65%"></i></div></div></div>
+<div class="lesson"><div class="lic" style="background:#FEF3C7">📖</div><div><b>Azərbaycan dili</b><p>10 dərs • 90 sual</p></div><div class="faiz"><b>40%</b><div class="bar"><i style="width:40%;background:#F59E0B"></i></div></div></div>
+<div class="lesson"><div class="lic" style="background:#D1FAE5">🇬🇧</div><div><b>İngilis dili</b><p>8 dərs • 70 sual</p></div><div class="faiz"><b>80%</b><div class="bar"><i style="width:80%;background:#10B981"></i></div></div></div>
+
+<button class="btnBoz" style="margin-top:14px" onclick="cixis()">Çıxış et</button>
 </div>
-<button class="btnBoz" onclick="render()">Yenilə</button>
-<div id="list" style="margin-top:14px"></div>
-<button class="btnBoz" onclick="location.href='qeydiyyat.html'">Sayta qayıt</button>
 </div>
 
 <script>
-var tab='pending';
-function al(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
-function saxla(u){ localStorage.setItem("zqi_users", JSON.stringify(u)); }
-function setTab(t){ tab=t; document.querySelectorAll('.tabs button').forEach(function(b){ b.classList.remove('aktiv'); }); if(t=='pending') document.getElementById('t1').classList.add('aktiv'); if(t=='approved') document.getElementById('t2').classList.add('aktiv'); if(t=='rejected') document.getElementById('t3').classList.add('aktiv'); if(t=='all') document.getElementById('t4').classList.add('aktiv'); render(); }
-function initials(ad,soyad){ var a=(ad||"")[0]||"?"; var s=(soyad||"")[0]||""; return (a+s).toUpperCase(); }
-function render(){
-  var users=al();
-  document.getElementById('cemi').innerText=users.length;
-  document.getElementById('icazeli').innerText=users.filter(function(u){return u.status=='approved'}).length;
-  document.getElementById('gozleyen').innerText=users.filter(function(u){return u.status=='pending'}).length;
-  var q=document.getElementById('axtar').value.toLowerCase();
-  var box=document.getElementById('list'); box.innerHTML="";
-  var filt=users.filter(function(u){
-    if(tab!='all' && u.status!=tab) return false;
-    if(q && !( (u.ad+" "+u.soyad+" "+u.tel+" "+u.username).toLowerCase().includes(q) )) return false;
-    return true;
-  });
-  if(filt.length==0){ box.innerHTML="<p style='text-align:center;color:#8A93B2'>Heç kim yoxdur.</p>"; return; }
-  filt.forEach(function(u){
-    var idx=users.indexOf(u);
-    var badgeClass = u.status=='pending'?"pending":u.status=='approved'?"approved":"rejected";
-    var badgeText = u.status=='pending'?"GÖZLƏYİR":u.status=='approved'?"İCAZƏLİ":"RƏDD EDİLDİ";
-    var d=document.createElement("div"); d.className="user";
-    d.innerHTML=
-    "<div class='userHead'>"+
-      "<div class='avatar'>"+initials(u.ad,u.soyad)+"</div>"+
-      "<div><b>"+(u.ad||"-")+" "+(u.soyad||"")+"</b><span class='badge "+badgeClass+"'>"+badgeText+"</span></div>"+
-    "</div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>📞</span>Telefon</span><span class='val'>"+(u.tel||"-")+"</span></div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>👤</span>İstifadəçi adı</span><span class='val'>@"+(u.username||"-")+"</span></div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🔒</span>Şifrəsi</span><span class='val'>"+(u.password||"-")+"</span></div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🎓</span>Sinif</span><span class='val'>"+(u.sinif||"-")+"</span></div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>📍</span>Bölgə / Məktəb</span><span class='val'>"+(u.bolge||"-")+"</span></div>"+
-    "<div class='rowInfo'><span class='lbl'><span class='iconBox'>🕒</span>Qeydiyyat vaxtı</span><span class='val'>"+(u.vaxt||"-")+"</span></div>"+
-    "<div class='btnRow'></div>";
-    var row=d.querySelector('.btnRow');
-    var b1=document.createElement("button"); b1.className="btnYasil"; b1.innerText="İcazə ver";
-    var b2=document.createElement("button"); b2.className="btnQirmizi"; b2.innerText="Rədd et";
-    var b3=document.createElement("button"); b3.className="btnSil"; b3.innerText="🗑️";
-    b1.onclick=function(){ users[idx].status="approved"; saxla(users); render(); };
-    b2.onclick=function(){ users[idx].status="rejected"; saxla(users); render(); };
-    b3.onclick=function(){ if(confirm("Silinsin? "+u.ad)){ users.splice(idx,1); saxla(users); render(); } };
-    row.appendChild(b1); row.appendChild(b2); row.appendChild(b3);
-    box.appendChild(d);
-  });
+function getQeydiyyat(){
+  window.location.href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/zogadiunarebi1/Zogadiunarebi-Qebul-mtahan/main/qeydiyyat.html";
 }
-document.getElementById('girBtn').onclick=function(){
-  if(document.getElementById('sifre').value=="20112011"){
-    document.getElementById('login').style.display="none";
-    document.getElementById('panel').style.display="block";
-    render();
-  } else alert("Şifrə səhvdir!");
-};
-document.getElementById('axtar').oninput=render;
+function getUsers(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
+function giris(){
+  var u=document.getElementById('lu').value.trim();
+  var p=document.getElementById('lp').value.trim();
+  var user=getUsers().find(function(x){ return x.username==u && x.password==p; });
+  if(!user){ var m=document.getElementById('msg'); m.style.display='block'; m.innerText="❌ Ad və ya şifrə səhvdir!"; return; }
+  if(user.status!='approved'){ var m=document.getElementById('msg'); m.style.display='block'; m.innerText="⏳ Hələ təsdiqlənməyibsən. Admin icazə verməlidir."; return; }
+  localStorage.setItem("zqi_current", JSON.stringify(user));
+  acApp(user);
+}
+function acApp(user){
+  document.getElementById('loginBox').style.display='none';
+  document.getElementById('app').style.display='block';
+  document.getElementById('ad').innerText=user.ad;
+  document.getElementById('avatar').innerText=(user.ad[0]||"H").toUpperCase();
+  document.getElementById('xal').innerText=localStorage.getItem("zqi_xal_"+user.username)||"0";
+}
+function cixis(){ localStorage.removeItem("zqi_current"); location.reload(); }
+var cur=null; try{ cur=JSON.parse(localStorage.getItem("zqi_current")||"null"); }catch(e){}
+if(cur){ acApp(cur); }
 </script>
 </body>
 </html>
