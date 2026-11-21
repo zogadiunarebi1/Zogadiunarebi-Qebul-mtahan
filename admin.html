@@ -3,133 +3,107 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ | Əsas Səhifə</title>
+<title>ZQİ | Admin Paneli</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial;margin:0}
-body{background:#F6F7FB;color:#111827;padding-bottom:30px}
-.wrap{max-width:480px;margin:0 auto;padding:0 16px}
-.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0 14px}
-.logoBox{display:flex;gap:10px;align-items:center}
-.logo{width:46px;height:46px;background:#111827;color:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px}
-.logo span{color:#FF3B30}
-.logoBox b{font-size:15px;line-height:1.2;display:block}
-.logoBox small{color:#6B7280;font-size:12px}
-.avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#2563EB,#DC2626);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
-h1{font-size:26px;line-height:1.2;margin:4px 0 6px}
-h1 span{color:#2563EB}
-.sub{color:#6B7280;font-size:14px}
-.search{margin:16px 0;background:#fff;border:1px solid #E5E7EB;border-radius:14px;padding:13px 14px;display:flex;gap:8px;align-items:center;color:#9CA3AF;font-size:14px}
-.search input{border:0;outline:none;width:100%;font-size:14px}
-.hero{background:#111827;color:#fff;border-radius:22px;padding:20px;margin-top:4px;display:flex;gap:14px;align-items:center}
-.heroText{flex:1}
-.heroText small{background:#2563EB;padding:4px 9px;border-radius:20px;font-size:11px;font-weight:700}
-.heroText h2{font-size:20px;margin:10px 0 6px;line-height:1.3}
-.heroText p{font-size:13px;opacity:.7;line-height:1.4}
-.heroText button{margin-top:12px;background:#fff;color:#111827;border:0;padding:11px 16px;border-radius:11px;font-weight:800;cursor:pointer}
-.heroImg{width:82px;height:82px;background:#fff;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:38px;flex-shrink:0}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
-.stat{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:14px;display:flex;gap:11px;align-items:center}
-.stat .ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
-.stat b{font-size:18px;display:block}
-.stat span{font-size:12px;color:#6B7280}
-.secHead{display:flex;justify-content:space-between;align-items:center;margin:20px 0 12px}
-.secHead h3{font-size:17px}
-.lesson{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:14px;display:flex;gap:12px;align-items:center;margin-bottom:10px}
-.lesson .lic{width:50px;height:50px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
-.lesson b{font-size:15px;display:block}
-.lesson p{font-size:12px;color:#6B7280;margin-top:2px}
-.lesson .faiz{margin-left:auto;text-align:right}
-.lesson .faiz b{color:#2563EB;font-size:14px}
-.bar{width:70px;height:6px;background:#E5E7EB;border-radius:10px;overflow:hidden;margin-top:5px}
-.bar i{display:block;height:100%;background:#2563EB;border-radius:10px}
-.card{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:16px;margin-top:14px}
-.card h3{font-size:16px}
-.card p{color:#6B7280;font-size:13px;margin-top:4px}
-input{width:100%;padding:13px;border:1px solid #E5E7EB;border-radius:12px;outline:none;margin-bottom:10px;font-size:14px}
-.btnMain{width:100%;padding:13px;border:0;border-radius:12px;background:#111827;color:#fff;font-weight:800;cursor:pointer}
-.btnBoz{width:100%;padding:12px;border:0;border-radius:12px;background:#EEF2FF;color:#2563EB;font-weight:800;margin-top:8px;cursor:pointer}
-.msg{padding:11px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;display:none;margin-bottom:10px;background:#FEE2E2;color:#991B1B}
+body{background:#0B1020;color:#fff;min-height:100vh}
+.top{background:#132046;padding:18px 16px;text-align:center;border-bottom:1px solid #232B45}
+.top b{font-size:17px;display:block}
+.top small{color:#8A93B2;font-size:12px}
+.wrap{max-width:900px;margin:0 auto;padding:14px 12px}
+.card{background:#141A2E;border:1px solid #232B45;border-radius:14px;padding:14px;margin-bottom:12px}
+.say{font-size:14px;font-weight:700;margin-bottom:10px}
+.say span{color:#60A5FA}
+.info{background:#1E2A4A;border-radius:8px;padding:9px 12px;font-size:13px;color:#93C5FD;margin-bottom:10px}
+.btnRow{display:flex;gap:8px;flex-wrap:wrap}
+button{cursor:pointer;border:0;border-radius:8px;padding:9px 14px;font-weight:700;font-size:13px}
+.btnMavi{background:#2563EB;color:#fff}
+.btnQirmizi{background:#DC2626;color:#fff}
+.btnYasil{background:#16A34A;color:#fff}
+.btnBoz{background:#1E2540;color:#CBD5E1}
+h3{font-size:15px;margin-bottom:12px}
+/* CƏDVƏL - SKRİNDƏKİ KİMİ */
+.tableWrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:650px;font-size:13px}
+thead th{background:#1E2A4A;color:#93C5FD;text-align:left;padding:10px 8px;font-size:12px;white-space:nowrap}
+tbody td{padding:10px 8px;border-bottom:1px solid #1E2540;vertical-align:middle;white-space:nowrap}
+tbody tr:last-child td{border-bottom:0}
+.status{padding:4px 8px;border-radius:20px;font-size:11px;font-weight:800}
+.status.gozleyir{background:#FEF3C7;color:#92400E}
+.status.tesdiq{background:#BBF7D0;color:#065F46}
+.status.redd{background:#FECACA;color:#991B1B}
+.aksiya{display:flex;gap:6px}
+.aksiya button{padding:7px 10px;font-size:12px}
+.loginCard{max-width:400px;margin:40px auto}
+input{width:100%;padding:12px;border:1px solid #232B45;border-radius:10px;background:#0B1020;color:#fff;outline:none;margin-bottom:10px}
+@media(max-width:600px){ .wrap{padding:10px 8px} }
 </style>
 </head>
 <body>
-<div class="wrap">
+
+<div class="top"><b>ZQİ Riyaziyyat</b><small>Administrator paneli</small></div>
 
 <!-- GİRİŞ -->
-<div id="loginBox">
-<div style="text-align:center;padding:20px 0 10px"><div class="logo" style="margin:0 auto">ZQ<span>İ</span></div><h1 style="font-size:22px;margin-top:10px">Xoş gəldin!</h1><p class="sub">Admin təsdiqlədikdən sonra girə bilərsən</p></div>
+<div class="wrap" id="loginBox">
+<div class="card loginCard"><h3 style="text-align:center">🔐 Admin Girişi</h3><p style="color:#8A93B2;font-size:13px;text-align:center;margin-bottom:12px">Ancaq admin girə bilər</p><input id="aUser" placeholder="Admin adı"><input id="aPass" type="password" placeholder="Şifrə"><p id="msg" style="display:none;color:#FCA5A5;font-size:13px;text-align:center;margin-bottom:8px"></p><button class="btnMavi" style="width:100%" onclick="adminGiris()">Daxil ol</button></div>
+</div>
+
+<!-- PANEL -->
+<div class="wrap" id="panel" style="display:none">
 <div class="card">
-<input id="lu" placeholder="İstifadəçi adı">
-<input id="lp" type="password" placeholder="Şifrə">
-<div id="msg" class="msg"></div>
-<button class="btnMain" onclick="giris()">Daxil ol</button>
-<!-- DÜZƏLDİLMİŞ DÜYMƏ - TAM LİNK -->
-<button class="btnBoz" onclick="getQeydiyyat()">Hesabım yoxdur - Qeydiyyat</button>
+<div class="say">Şagird sayı: <span id="say">0</span></div>
+<div class="info" id="infoBar">Siyahı yeniləndi ✅</div>
+<div class="btnRow">
+<button class="btnMavi" onclick="render()">Siyahını yenilə</button>
+<button class="btnQirmizi" onclick="cixis()">Hesabdan çıx</button>
 </div>
 </div>
 
-<!-- ƏSAS SƏHİFƏ -->
-<div id="app" style="display:none">
-<div class="top">
-<div class="logoBox"><div class="logo">ZQ<span>İ</span></div><div><b>Zogadiunarebi</b><small>Qəbul İmtahanı</small></div></div>
-<div class="avatar" id="avatar">H</div>
+<div class="card">
+<h3>Qeydiyyatdan keçən şagirdlər</h3>
+<div class="tableWrap">
+<table>
+<thead><tr><th>Ad, soyad</th><th>İstifadəçi adı</th><th>Sinif</th><th>Yaşadığı yer</th><th>E-poçt</th><th>Telefon</th><th>Status</th><th>Əməliyyat</th></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
 </div>
-
-<h1>Salam, <span id="ad">Hüseyn</span> 👋</h1>
-<p class="sub">Bu gün imtahana bir addım daha yaxınlaş.</p>
-
-<div class="search">🔍 <input placeholder="Dərs, mövzu axtar..."></div>
-
-<div class="hero">
-<div class="heroText">
-<small>🔥 GÜNÜN SINAĞI</small>
-<h2>10 sual, 15 dəqiqə<br>Özünü yoxla!</h2>
-<p>İndi başla və reytinqdə yüksəl.</p>
-<button onclick="alert('Sınaq başlayır!')">Sınağa Başla →</button>
-</div>
-<div class="heroImg">🎯</div>
-</div>
-
-<div class="stats">
-<div class="stat"><div class="ic" style="background:#DBEAFE">⭐</div><div><b id="xal">0</b><span>Ümumi Xal</span></div></div>
-<div class="stat"><div class="ic" style="background:#FEE2E2">🏆</div><div><b>#12</b><span>Reytinq</span></div></div>
-<div class="stat"><div class="ic" style="background:#D1FAE5">✅</div><div><b>24</b><span>Düz Cavab</span></div></div>
-<div class="stat"><div class="ic" style="background:#FEF3C7">🔥</div><div><b>5 gün</b><span>Ardıcıl</span></div></div>
-</div>
-
-<div class="secHead"><h3>Dərslər</h3></div>
-<div class="lesson"><div class="lic" style="background:#DBEAFE">📐</div><div><b>Riyaziyyat</b><p>12 dərs • 120 sual</p></div><div class="faiz"><b>65%</b><div class="bar"><i style="width:65%"></i></div></div></div>
-<div class="lesson"><div class="lic" style="background:#FEF3C7">📖</div><div><b>Azərbaycan dili</b><p>10 dərs • 90 sual</p></div><div class="faiz"><b>40%</b><div class="bar"><i style="width:40%;background:#F59E0B"></i></div></div></div>
-<div class="lesson"><div class="lic" style="background:#D1FAE5">🇬🇧</div><div><b>İngilis dili</b><p>8 dərs • 70 sual</p></div><div class="faiz"><b>80%</b><div class="bar"><i style="width:80%;background:#10B981"></i></div></div></div>
-
-<button class="btnBoz" style="margin-top:14px" onclick="cixis()">Çıxış et</button>
+<p id="bos" style="text-align:center;color:#8A93B2;padding:14px;font-size:13px;display:none">Hələ heç kim qeydiyyatdan keçməyib.</p>
 </div>
 </div>
 
 <script>
-function getQeydiyyat(){
-  window.location.href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/zogadiunarebi1/Zogadiunarebi-Qebul-mtahan/main/qeydiyyat.html";
-}
 function getUsers(){ try{ return JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ return []; } }
-function giris(){
-  var u=document.getElementById('lu').value.trim();
-  var p=document.getElementById('lp').value.trim();
-  var user=getUsers().find(function(x){ return x.username==u && x.password==p; });
-  if(!user){ var m=document.getElementById('msg'); m.style.display='block'; m.innerText="❌ Ad və ya şifrə səhvdir!"; return; }
-  if(user.status!='approved'){ var m=document.getElementById('msg'); m.style.display='block'; m.innerText="⏳ Hələ təsdiqlənməyibsən. Admin icazə verməlidir."; return; }
-  localStorage.setItem("zqi_current", JSON.stringify(user));
-  acApp(user);
+function setUsers(u){ localStorage.setItem("zqi_users", JSON.stringify(u)); }
+function adminGiris(){
+  var u=document.getElementById('aUser').value.trim();
+  var p=document.getElementById('aPass').value.trim();
+  if(u=="admin" && p=="1234"){ localStorage.setItem("zqi_admin","1"); gosterPanel(); }
+  else{ var m=document.getElementById('msg'); m.style.display='block'; m.innerText="❌ Admin adı və ya şifrə səhvdir!"; }
 }
-function acApp(user){
-  document.getElementById('loginBox').style.display='none';
-  document.getElementById('app').style.display='block';
-  document.getElementById('ad').innerText=user.ad;
-  document.getElementById('avatar').innerText=(user.ad[0]||"H").toUpperCase();
-  document.getElementById('xal').innerText=localStorage.getItem("zqi_xal_"+user.username)||"0";
+function gosterPanel(){ document.getElementById('loginBox').style.display='none'; document.getElementById('panel').style.display='block'; render(); }
+function cixis(){ localStorage.removeItem("zqi_admin"); location.reload(); }
+function render(){
+  var users=getUsers();
+  document.getElementById('say').innerText=users.length;
+  var tb=document.getElementById('tbody'); tb.innerHTML="";
+  document.getElementById('bos').style.display = users.length==0 ? "block" : "none";
+  document.getElementById('infoBar').innerText="Siyahı yeniləndi ✅ • "+new Date().toLocaleTimeString('az-AZ');
+  users.forEach(function(u,i){
+    var st = u.status=='approved' ? '<span class="status tesdiq">✅ Təsdiq</span>' : u.status=='rejected' ? '<span class="status redd">❌ Rədd</span>' : '<span class="status gozleyir">⏳ Gözləyir</span>';
+    var btn = "";
+    if(u.status!='approved') btn+='<button class="btnYasil" onclick="tesdiq('+i+')">✅ İcazə ver</button>';
+    if(u.status!='rejected') btn+='<button class="btnQirmizi" onclick="redd('+i+')">❌ Rədd et</button>';
+    btn+='<button class="btnBoz" onclick="sil('+i+')">🗑️ Sil</button>';
+    var tr=document.createElement('tr');
+    tr.innerHTML="<td><b>"+(u.ad||"-")+" "+(u.soyad||"")+"</b></td><td>@"+(u.username||"-")+"</td><td>"+(u.sinif||"-")+"</td><td>"+(u.bolge||"-")+"</td><td>"+(u.email||"-")+"</td><td>"+(u.tel||"-")+"</td><td>"+st+"</td><td><div class='aksiya'>"+btn+"</div></td>";
+    tb.appendChild(tr);
+  });
 }
-function cixis(){ localStorage.removeItem("zqi_current"); location.reload(); }
-var cur=null; try{ cur=JSON.parse(localStorage.getItem("zqi_current")||"null"); }catch(e){}
-if(cur){ acApp(cur); }
+function tesdiq(i){ var u=getUsers(); u[i].status='approved'; setUsers(u); render(); alert("✅ "+u[i].ad+" təsdiqləndi! İndi girə bilər."); }
+function redd(i){ var u=getUsers(); u[i].status='rejected'; setUsers(u); render(); }
+function sil(i){ if(confirm("Silinsin?")){ var u=getUsers(); u.splice(i,1); setUsers(u); render(); } }
+if(localStorage.getItem("zqi_admin")=="1"){ gosterPanel(); }
 </script>
 </body>
 </html>
