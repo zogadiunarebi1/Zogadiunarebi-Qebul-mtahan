@@ -3,95 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ZQİ | Qeydiyyat</title>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<title>Qəbul İmtahanı - Qeydiyyat</title>
 <style>
-*{box-sizing:border-box;font-family:'Plus Jakarta Sans',Arial;margin:0}
-body{background:#F6F7FB;color:#111827}
-.wrap{max-width:440px;margin:0 auto;padding:16px}
-.top{text-align:center;padding:18px 0 10px}
-.logo{width:56px;height:56px;background:#111827;color:#fff;border-radius:16px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:22px;margin:0 auto}
-.logo span{color:#FF3B30}
-h1{font-size:22px;margin-top:10px}
-.sub{color:#6B7280;font-size:13px;margin-top:4px}
-.card{background:#fff;border:1px solid #E5E7EB;border-radius:18px;padding:16px;margin-top:14px}
-label{font-size:12px;font-weight:700;color:#374151;display:block;margin:12px 0 6px}
-label:first-child{margin-top:0}
-input,select{width:100%;padding:13px;border:1px solid #E5E7EB;border-radius:12px;outline:none;font-size:14px;background:#fff}
-input:focus,select:focus{border-color:#2563EB}
-.btn{width:100%;padding:14px;border:0;border-radius:12px;background:#111827;color:#fff;font-weight:800;font-size:15px;cursor:pointer;margin-top:16px}
-.btn2{width:100%;padding:12px;border:0;border-radius:12px;background:#EEF2FF;color:#2563EB;font-weight:800;margin-top:8px;cursor:pointer}
-.msg{padding:11px;border-radius:12px;font-size:13px;font-weight:700;text-align:center;display:none;margin-top:12px}
-.msg.err{background:#FEE2E2;color:#991B1B}
-.msg.ok{background:#D1FAE5;color:#065F46}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f3f7fd;color:#172b46}
+header{background:#fff;padding:15px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px #0001;position:sticky;top:0;z-index:10}
+.brand{font-weight:800;font-size:20px;color:#1769c2}
+.topbtn{border:0;background:#1769c2;color:#fff;padding:10px 16px;border-radius:10px;font-weight:bold}
+.topbtn2{border:1px solid #1769c2;background:#fff;color:#1769c2;padding:10px 14px;border-radius:10px;font-weight:bold}
+main{max-width:900px;margin:auto;padding:20px}
+.hero{background:linear-gradient(130deg,#1769c2,#4d9af0);color:#fff;border-radius:20px;padding:30px}
+.hero h1{font-size:30px;margin-bottom:10px}
+.card{background:#fff;border-radius:16px;padding:22px;margin-top:18px;box-shadow:0 4px 16px #0001}
+input{width:100%;padding:13px;border:1px solid #dbe4f0;border-radius:10px;margin:7px 0;font-size:15px}
+.primary{border:0;background:#1769c2;color:#fff;padding:13px;border-radius:10px;font-weight:bold;width:100%;margin-top:10px}
+.tabs{display:flex;gap:8px;margin-bottom:10px}
+.tabs button{flex:1;padding:11px;border:1px solid #dbe4f0;background:#f5f8fc;border-radius:10px;font-weight:bold}
+.tabs button.on{background:#1769c2;color:#fff;border-color:#1769c2}
+.msg{padding:12px;border-radius:10px;margin:10px 0;display:none;font-weight:bold}
+.msg.ok{display:block;background:#e6f7ee;color:#16844c}
+.msg.err{display:block;background:#fdecec;color:#cf4141}
+.small{color:#72839a;font-size:13px;margin-top:8px;text-align:center}
+table{width:100%;border-collapse:collapse;margin-top:12px}
+td,th{border:1px solid #e2eaf4;padding:10px;text-align:left;font-size:14px}
+th{background:#1769c2;color:#fff}
+.xbtn{border:0;background:#ff3b30;color:#fff;width:32px;height:32px;border-radius:8px;font-weight:bold;font-size:18px}
+.unblock{border:0;background:#16844c;color:#fff;padding:7px 10px;border-radius:8px;font-weight:bold}
+.hidden{display:none!important}
+#blockedScreen{position:fixed;inset:0;background:#111827;color:#fff;z-index:999;display:none;place-items:center;text-align:center;padding:20px}
+#blockedScreen.show{display:grid}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#16844c;color:#fff;padding:14px 20px;border-radius:12px;font-weight:bold;z-index:1000;display:none;box-shadow:0 10px 30px #0003}
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="top"><div class="logo">ZQ<span>İ</span></div><h1>Hesab yarat</h1><p class="sub">Admin təsdiqlədikdən sonra daxil ola biləcəksən</p></div>
+<div id="blockedScreen"><div><div style="font-size:60px">🚫</div><h1 style="margin:12px 0">Admin hesabı deaktiv elədi</h1><p style="opacity:.8">Bu hesab admin tərəfindən bağlanıb.<br>Əlaqə: +995 555 93 65 47</p><button onclick="logout()" style="margin-top:20px;border:0;background:#fff;color:#111;padding:12px 20px;border-radius:10px;font-weight:bold">Çıxış</button></div></div>
+<div id="toast"></div>
 
-<div class="card">
-<label>Ad *</label><input id="ad" placeholder="Məs: Hüseyn">
-<label>Soyad *</label><input id="soyad" placeholder="Məs: Hüseynli">
-<label>İstifadəçi adı *</label><input id="username" placeholder="Məs: huseyn">
-<label>Şifrə *</label><input id="password" type="password" placeholder="Ən azı 3 simvol">
-<label>Sinif</label>
-<select id="sinif"><option value="9">9-cu sinif</option><option value="10">10-cu sinif</option><option value="11">11-ci sinif</option><option value="Abituriyent">Abituriyent</option></select>
-<label>Yaşadığı yer</label><input id="bolge" placeholder="Məs: Bakı">
-<label>E-poçt</label><input id="email" placeholder="Məs: huseyn@gmail.com">
-<label>Telefon</label><input id="tel" placeholder="Məs: 050 123 45 67">
+<header>
+<div class="brand">Qəbul İmtahanı</div>
+<div><span id="userNameTop" style="font-weight:bold;margin-right:8px"></span><button id="adminBtn" class="topbtn2 hidden" onclick="showAdmin()">Admin Panel</button> <button id="authBtn" class="topbtn" onclick="openAuth()">Qeydiyyat / Giriş</button> <button id="logoutBtn" class="topbtn2 hidden" onclick="logout()">Çıxış</button></div>
+</header>
 
-<div id="msg" class="msg"></div>
-<button class="btn" onclick="qeydiyyat()">Qeydiyyatı tamamla →</button>
-<button class="btn2" onclick="getGiris()">Artıq hesabım var - Giriş</button>
+<main>
+<div class="hero"><h1>Öyrənməyə buradan başla!</h1><p>Qeydiyyatdan keç, dərslərə gir, testləri işlə.</p><button class="topbtn" style="background:#fff;color:#1769c2;margin-top:14px" onclick="openAuth()">Qeydiyyatdan keç →</button></div>
+
+<div class="card" id="authCard">
+<h2 id="authTitle">Qeydiyyat / Giriş</h2>
+<div class="tabs"><button id="tabReg" class="on" onclick="setTab('reg')">Qeydiyyat</button><button id="tabLogin" onclick="setTab('login')">Artıq hesabım var / Giriş</button></div>
+<div id="authMsg" class="msg"></div>
+<!-- QEYDIYYAT FORMU -->
+<div id="regForm">
+<input id="regName" placeholder="Ad Soyad">
+<input id="regPhone" placeholder="Telefon (məs: 555936547)">
+<input id="regPass" type="password" placeholder="Şifrə (ən az 4 simvol)">
+<button class="primary" onclick="doRegister()">Qeydiyyatdan keç</button>
+<p class="small">Hesabın var? <b style="color:#1769c2;cursor:pointer" onclick="setTab('login')">Giriş et →</b></p>
+</div>
+<!-- GIRIS FORMU -->
+<div id="loginForm" class="hidden">
+<input id="loginPhone" placeholder="Telefon">
+<input id="loginPass" type="password" placeholder="Şifrə">
+<button class="primary" onclick="doLogin()">Giriş et</button>
+<p class="small">Hesabın yoxdur? <b style="color:#1769c2;cursor:pointer" onclick="setTab('reg')">Qeydiyyatdan keç →</b><br>Admin: telefon <b>admin</b> , şifrə <b>admin123</b></p>
 </div>
 </div>
 
+<div class="card" id="welcomeCard" class="hidden" style="display:none">
+<h2 id="welcomeText"></h2><p>Dərslər bölməsinə keçə bilərsən. İndi içini düzəldəcəyik.</p>
+</div>
+
+<div class="card hidden" id="adminCard">
+<h2>Admin Panel 👑</h2><p class="small" style="text-align:left">X-ə basanda həmin hesab bağlanır, o adamın ekranına Admin hesabı deaktiv elədi gəlir.</p>
+<div id="adminList"></div>
+</div>
+</main>
 <script>
-function goster(text, ok){
-  var m=document.getElementById('msg');
-  m.style.display='block';
-  m.className='msg '+(ok?'ok':'err');
-  m.innerText=text;
+// ===== YADDAŞ =====
+function getUsers(){try{return JSON.parse(localStorage.getItem('zqi_users')||'[]')}catch(e){return[]}}
+function saveUsers(u){localStorage.setItem('zqi_users',JSON.stringify(u))}
+function getSession(){try{return JSON.parse(localStorage.getItem('zqi_session')||'null')}catch(e){return null}}
+function setSession(s){localStorage.setItem('zqi_session',JSON.stringify(s))}
+function showToast(t){var el=document.getElementById('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',3500)}
+function showMsg(t,ok){var m=document.getElementById('authMsg');m.textContent=t;m.className='msg '+(ok?'ok':'err')}
+function normPhone(p){return String(p||'').replace(/\D/g,'')}
+
+// ===== TABLAR =====
+function setTab(tab){
+  document.getElementById('tabReg').className = tab==='reg'?'on':'';
+  document.getElementById('tabLogin').className = tab==='login'?'on':'';
+  document.getElementById('regForm').classList.toggle('hidden', tab!=='reg');
+  document.getElementById('loginForm').classList.toggle('hidden', tab!=='login');
+  document.getElementById('authTitle').textContent = tab==='reg' ? 'Qeydiyyat' : 'Giriş - Artıq hesabım var';
+  document.getElementById('authMsg').className='msg';
 }
-function getGiris(){
-  window.location.href="https://htmlpreview.github.io/?https://raw.githubusercontent.com/zogadiunarebi1/Zogadiunarebi-Qebul-mtahan/main/yeni.html";
+function openAuth(){document.getElementById('authCard').scrollIntoView({behavior:'smooth'});setTab('reg')}
+
+// ===== QEYDIYYAT =====
+function doRegister(){
+  var name=document.getElementById('regName').value.trim();
+  var phone=normPhone(document.getElementById('regPhone').value);
+  var pass=document.getElementById('regPass').value;
+  if(!name||!phone||!pass){showMsg('Zəhmət olmasa hamısını doldur!',false);return}
+  if(pass.length<4){showMsg('Şifrə ən az 4 simvol olmalıdır!',false);return}
+  var users=getUsers();
+  if(users.find(u=>u.phone===phone)){showMsg('Bu telefonla artıq hesab var! Giriş et.',false);setTab('login');return}
+  users.push({name:name,phone:phone,pass:pass,blocked:false,created:Date.now()});
+  saveUsers(users);
+  setSession({phone:phone,name:name});
+  showMsg('Qeydiyyat uğurla tamamlandı ✅ Xoş gəldin, '+name+'!',true);
+  showToast('Qeydiyyat uğurla tamamlandı ✅');
+  updateUI();
 }
-function qeydiyyat(){
-  var ad=document.getElementById('ad').value.trim();
-  var soyad=document.getElementById('soyad').value.trim();
-  var username=document.getElementById('username').value.trim().toLowerCase();
-  var password=document.getElementById('password').value.trim();
-  var sinif=document.getElementById('sinif').value;
-  var bolge=document.getElementById('bolge').value.trim();
-  var email=document.getElementById('email').value.trim();
-  var tel=document.getElementById('tel').value.trim();
 
-  if(!ad || !soyad || !username || !password){
-    goster("❌ Zəhmət olmasa Ad, Soyad, İstifadəçi adı və Şifrəni doldur!", false);
-    return;
+// ===== GIRIS =====
+function doLogin(){
+  var phoneRaw=document.getElementById('loginPhone').value.trim();
+  var pass=document.getElementById('loginPass').value;
+  // Admin girişi
+  if(phoneRaw==='admin' && pass==='admin123'){
+    setSession({phone:'admin',name:'Admin',isAdmin:true});
+    showMsg('Admin girişi uğurludur ✅',true);
+    showToast('Admin girişi uğurludur ✅');
+    updateUI(); return;
   }
-  if(password.length < 3){
-    goster("❌ Şifrə ən azı 3 simvol olmalıdır!", false);
-    return;
-  }
-
-  var users=[];
-  try{ users=JSON.parse(localStorage.getItem("zqi_users")||"[]"); }catch(e){ users=[]; }
-
-  var varMi = users.find(function(u){ return u.username==username; });
-  if(varMi){
-    goster("❌ Bu istifadəçi adı artıq var! Başqasını yaz.", false);
-    return;
-  }
-
-  users.push({ ad: ad, soyad: soyad, username: username, password: password, sinif: sinif, bolge: bolge, email: email, tel: tel, status: "pending", vaxt: new Date().toLocaleString('az-AZ') });
-  localStorage.setItem("zqi_users", JSON.stringify(users));
-
-  goster("✅ Qeydiyyat uğurludur! Admin təsdiqini gözlə. Giriş səhifəsinə keçirsən...", true);
-
-  setTimeout(function(){ getGiris(); }, 1500);
+  var phone=normPhone(phoneRaw);
+  var users=getUsers();
+  var u=users.find(x=>x.phone===phone);
+  if(!u){showMsg('Bu telefonla hesab tapılmadı! Əvvəl qeydiyyatdan keç.',false);return}
+  if(u.blocked){showBlocked();return}
+  if(u.pass!==pass){showMsg('Şifrə səhvdir!',false);return}
+  setSession({phone:u.phone,name:u.name});
+  showMsg('Giriş uğurludur ✅ Xoş gəldin, '+u.name+'!',true);
+  showToast('Giriş uğurludur ✅');
+  updateUI();
 }
+
+function logout(){localStorage.removeItem('zqi_session');document.getElementById('blockedScreen').classList.remove('show');updateUI();setTab('login');window.scrollTo({top:0,behavior:'smooth'})}
+function showBlocked(){document.getElementById('blockedScreen').classList.add('show')}
+function hideBlocked(){document.getElementById('blockedScreen').classList.remove('show')}
+// ===== ADMIN =====
+function showAdmin(){
+  var s=getSession();
+  if(!s||!s.isAdmin){alert('Admin deyilsən!');return}
+  document.getElementById('adminCard').classList.remove('hidden');
+  renderAdmin();
+  document.getElementById('adminCard').scrollIntoView({behavior:'smooth'});
+}
+function renderAdmin(){
+  var users=getUsers();
+  var html = users.length ? '<table><tr><th>Ad</th><th>Telefon</th><th>Vəziyyət</th><th>Sil / Bağla</th></tr>' : '<p>Heç bir istifadəçi yoxdur.</p>';
+  users.forEach((u,i)=>{
+    html += '<tr><td>'+u.name+'</td><td>'+u.phone+'</td><td>'+(u.blocked?'🚫 Bağlı':'✅ Aktiv')+'</td><td><button class="xbtn" onclick="blockUser('+i+')" title="Hesabı bağla">×</button> '+(u.blocked?'<button class="unblock" onclick="unblockUser('+i+')">Aç</button>':'')+'</td></tr>';
+  });
+  if(users.length) html+='</table>';
+  document.getElementById('adminList').innerHTML=html;
+}
+function blockUser(i){
+  var users=getUsers();
+  if(!confirm(users[i].name+' hesabı bağlansın?')) return;
+  users[i].blocked=true;
+  saveUsers(users);
+  // Əgər həmin adam indi bu telefonda / brauzerdə giriş edibsə, dərhal blok ekranı göstər
+  var s=getSession();
+  if(s && s.phone===users[i].phone){showBlocked()}
+  // Başqa cihazda / tabda olan üçün siqnal
+  localStorage.setItem('zqi_block_signal', JSON.stringify({phone:users[i].phone,at:Date.now()}));
+  showToast('Hesab bağlandı 🚫');
+  renderAdmin();
+}
+function unblockUser(i){
+  var users=getUsers(); users[i].blocked=false; saveUsers(users);
+  localStorage.setItem('zqi_block_signal', JSON.stringify({phone:users[i].phone,at:Date.now(),unblocked:true}));
+  renderAdmin(); showToast('Hesab açıldı ✅');
+}
+
+// ===== UI YENILEME + BLOK YOXLANISI =====
+function updateUI(){
+  var s=getSession();
+  var users=getUsers();
+  // Giriş edən adam sonradan bloklanıbsa?
+  if(s && !s.isAdmin){
+    var me=users.find(u=>u.phone===s.phone);
+    if(me && me.blocked){showBlocked();return}
+  }
+  hideBlocked();
+  var logged = !!s;
+  document.getElementById('authCard').style.display = logged ? 'none':'block';
+  document.getElementById('welcomeCard').style.display = logged ? 'block':'none';
+  document.getElementById('logoutBtn').classList.toggle('hidden', !logged);
+  document.getElementById('authBtn').style.display = logged ? 'none':'inline-block';
+  document.getElementById('adminBtn').classList.toggle('hidden', !(s&&s.isAdmin));
+  document.getElementById('adminCard').classList.toggle('hidden', !(s&&s.isAdmin));
+  if(s){
+    document.getElementById('userNameTop').textContent = '👋 '+s.name;
+    document.getElementById('welcomeText').textContent = 'Xoş gəldin, '+s.name+'! 🎉';
+    if(s.isAdmin) renderAdmin();
+  } else {
+    document.getElementById('userNameTop').textContent='';
+  }
+}
+// Hər 2 saniyədən bir yoxla: admin məni bloklayıb?
+setInterval(()=>{
+  var s=getSession(); if(!s||s.isAdmin) return;
+  var users=getUsers(); var me=users.find(u=>u.phone===s.phone);
+  if(me && me.blocked) showBlocked();
+},2000);
+// Başqa tabda blok siqnalı gəlsə
+window.addEventListener('storage',function(e){
+  if(e.key==='zqi_block_signal'){
+    try{var d=JSON.parse(e.newValue); var s=getSession(); if(s && s.phone===d.phone && !d.unblocked) showBlocked(); if(s && s.phone===d.phone && d.unblocked) hideBlocked();}catch(err){}
+  }
+});
+updateUI();
 </script>
 </body>
 </html>
