@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Qeydiyyat | Qəbul İmtahanı</title>
+<title>Qəbul İmtahanı</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,sans-serif;background:#EEF3FB;color:#1A2B4A;padding-bottom:30px}
+body{font-family:Arial,sans-serif;background:#F6F8FB;color:#1A2B4A}
 .topbar{background:#fff;padding:14px 18px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10;box-shadow:0 2px 12px #0001}
 .logo{font-weight:800;font-size:20px}.logo b{color:#1E7FB8}.logo span{color:#E63946}
-.topbtn{border:0;background:linear-gradient(90deg,#1E7FB8,#E63946);color:#fff;padding:10px 16px;border-radius:999px;font-weight:bold}
+.topbtn{border:0;background:#1E7FB8;color:#fff;padding:10px 16px;border-radius:999px;font-weight:bold}
 .wrap{max-width:460px;margin:0 auto;padding:16px}
 .hero{background:linear-gradient(135deg,#1E7FB8,#0A4D7A 55%,#E63946);color:#fff;border-radius:22px;padding:26px}
 .hero small{background:#ffffff30;padding:5px 11px;border-radius:99px;font-size:12px}
@@ -29,25 +29,47 @@ input:focus,select:focus{border-color:#1E7FB8;box-shadow:0 0 0 3px #1E7FB822}
 .btnRed{background:linear-gradient(90deg,#E63946,#FF5A5A)}
 .link{text-align:center;margin-top:14px;color:#7A8AA0;font-size:14px}.link b{color:#1E7FB8;cursor:pointer}
 .msg{padding:12px;border-radius:14px;margin:10px 0;display:none;font-weight:bold;font-size:14px}
-.msg.ok{display:block;background:#E6F7EE;color:#16844c}.msg.err{display:block;background:#FDECEC;color:#cf4141}
-.msg.wait{display:block;background:#FFF3CD;color:#856404}
+.msg.ok{display:block;background:#E6F7EE;color:#16844c}.msg.err{display:block;background:#FDECEC;color:#cf4141}.msg.wait{display:block;background:#FFF3CD;color:#856404}
 .hidden{display:none!important}
-table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}
-td,th{border:1px solid #e2eaf4;padding:9px;text-align:left}th{background:#1E7FB8;color:#fff}
+/* ANA SEHIFE - sekildeki kimi */
+.sec-title{font-size:22px;margin:20px 0 14px}.sec-title b{color:#1E7FB8}
+.bigcard{border-radius:22px;padding:26px 22px;color:#fff;text-align:center;margin-bottom:16px;position:relative;overflow:hidden;box-shadow:0 12px 30px #0002}
+.bigcard h3{font-size:26px;margin:8px 0 6px}.bigcard p{opacity:.9;font-size:14px}
+.bigcard .pill{display:inline-block;background:#ffffff30;padding:5px 12px;border-radius:99px;font-size:12px}
+.bigcard .enter{border:0;background:#fff;color:#222;padding:10px 22px;border-radius:999px;font-weight:bold;margin-top:14px}
+.math-bg{background:linear-gradient(135deg,#2B6CF0,#7B3FF2)}
+.verbal-bg{background:linear-gradient(135deg,#0AA87A,#0A8A9A)}
+.exam-bg{background:linear-gradient(135deg,#FF8A00,#FF3D3D)}
+.subcard{border-radius:20px;padding:22px;color:#fff;text-align:center;margin-bottom:14px}
+.subcard h3{font-size:22px}.subcard p{opacity:.9;font-size:13px;margin:6px 0}
+.subcard button{border:0;background:#fff;color:#222;padding:9px 20px;border-radius:999px;font-weight:bold;margin-top:10px}
+.yearcard{background:#fff;border-radius:16px;padding:16px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 4px 14px #0001;font-weight:bold}
+.yearcard span{color:#7A8AA0;font-size:13px;font-weight:normal}
+.yearcard button{border:0;background:#1E7FB8;color:#fff;padding:9px 16px;border-radius:999px;font-weight:bold}
+.back{border:0;background:#fff;padding:10px 16px;border-radius:999px;font-weight:bold;box-shadow:0 2px 10px #0001;margin-bottom:14px}
+.empty{background:#fff;border-radius:18px;padding:28px;text-align:center;color:#7A8AA0}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:13px}td,th{border:1px solid #e2eaf4;padding:9px;text-align:left}th{background:#1E7FB8;color:#fff}
 .xbtn{border:0;background:#E63946;color:#fff;width:32px;height:32px;border-radius:10px;font-weight:bold;font-size:18px}
 .okbtn{border:0;background:#16844c;color:#fff;width:32px;height:32px;border-radius:10px;font-weight:bold;font-size:16px}
 .unblock{border:0;background:#16844c;color:#fff;padding:7px 10px;border-radius:8px;font-weight:bold}
-#blockedScreen{position:fixed;inset:0;background:#111827;color:#fff;z-index:999;display:none;place-items:center;text-align:center;padding:20px}
-#blockedScreen.show{display:grid}
+/* GOZLEME + UGURLU EKRAN */
+#waitScreen,#successScreen,#blockedScreen{position:fixed;inset:0;background:#fff;z-index:999;display:none;place-items:center;text-align:center;padding:24px}
+#waitScreen.show,#successScreen.show,#blockedScreen.show{display:grid}
+#blockedScreen{background:#111827;color:#fff}
 #toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#16844c;color:#fff;padding:14px 20px;border-radius:14px;font-weight:bold;z-index:1000;display:none}
+.closeX{position:absolute;top:16px;right:16px;border:0;background:#EEF3FB;width:42px;height:42px;border-radius:50%;font-size:24px;font-weight:bold}
+.tech{font-size:80px;margin-bottom:10px}
 </style>
 </head>
 <body>
+<div id="waitScreen"><div><div class="tech">🔧🛠️</div><div style="font-size:50px">👨‍🔧</div><h1 style="margin:14px 0 8px">Texniki iş gedir</h1><p style="color:#7A8AA0">Admin təsdiq etdikdən sonra<br>giriş edə biləcəksiniz.</p><p style="margin-top:16px;font-size:13px;color:#aaa">Zəhmət olmasa gözləyin...</p></div></div>
+<div id="successScreen"><button class="closeX" onclick="closeSuccess()">×</button><div><div style="font-size:80px">✅</div><h1 style="margin:14px 0 8px">Qeydiyyat uğurla başa çatdı!</h1><p style="color:#7A8AA0">Hesabınız təsdiqləndi.<br>İndi dərslərə başlaya bilərsiniz.</p><button class="btn" style="max-width:260px" onclick="closeSuccess()">Davam et →</button></div></div>
 <div id="blockedScreen"><div><div style="font-size:60px">🚫</div><h1 style="margin:12px 0">Admin hesabı deaktiv elədi</h1><p style="opacity:.8">Bu hesab admin tərəfindən bağlanıb.<br>Əlaqə: +995 555 93 65 47</p><button onclick="logout()" style="margin-top:20px;border:0;background:#fff;color:#111;padding:12px 20px;border-radius:999px;font-weight:bold">Çıxış</button></div></div>
 <div id="toast"></div>
-<div class="topbar"><div class="logo"><b>Qəbul</b> <span>İmtahanı</span></div><div><span id="userNameTop" style="font-weight:bold;margin-right:6px"></span><button id="adminBtn" class="topbtn hidden" onclick="showAdmin()">Admin</button> <button id="logoutBtn" class="topbtn hidden" style="background:#E63946" onclick="logout()">Çıxış</button></div></div>
-<div class="wrap">
-<div class="hero"><small>✨ Təhsil Platforması</small><h1>Öyrənməyə buradan başla!</h1><p>Qeydiyyatdan keç, admin təsdiqləsin, dərslərə gir.</p></div>
+<div class="topbar"><div class="logo"><b>Qəbul</b> <span>İmtahanı</span></div><div><span id="userNameTop" style="font-weight:bold;margin-right:6px"></span><button id="logoutBtn" class="topbtn hidden" style="background:#E63946" onclick="logout()">Çıxış</button></div></div>
+<div class="wrap" id="mainWrap">
+<div class="hero" id="heroBox"><small>✨ Təhsil Platforması</small><h1>Öyrənməyə buradan başla!</h1><p>Qeydiyyatdan keç, dərslərə gir, testləri işlə.</p></div>
+<!-- QEYDIYYAT -->
 <div class="card" id="authCard">
 <h2 id="authTitle">Qeydiyyat</h2>
 <div class="tabs"><button id="tabReg" class="on" onclick="setTab('reg')">Qeydiyyat</button><button id="tabLogin" onclick="setTab('login')">Artıq hesabım var</button></div>
@@ -69,30 +91,29 @@ td,th{border:1px solid #e2eaf4;padding:9px;text-align:left}th{background:#1E7FB8
 <label>Nömrə / İstifadəçi adı:</label><input id="loginPhone" placeholder="Nömrə və ya istifadəçi adı">
 <label>Şifrə:</label><input id="loginPass" type="password" placeholder="">
 <button class="btn" onclick="doLogin()">Daxil olun</button>
-<p class="link">Hesabın yoxdur? <b onclick="setTab('reg')">Qeydiyyatdan keç</b><br><span style="font-size:12px">Admin: admin / admin123</span></p>
+<p class="link">Hesabın yoxdur? <b onclick="setTab('reg')">Qeydiyyatdan keç</b></p>
 </div>
 </div>
-<div class="card hidden" id="welcomeCard"><h2 id="welcomeText" style="text-align:left"></h2><p id="welcomeSub"></p><button class="btn btnRed" onclick="alert('Dərslər tezliklə burada olacaq!')">Dərslərə keç →</button></div>
-<div class="card hidden" id="adminCard"><h2 style="text-align:left">Admin Panel 👑</h2><p style="color:#7A8AA0;font-size:13px">✅ = Qəbul et &nbsp;|&nbsp; X = Bağla / Rədd et</p><div id="adminList"></div></div>
+<!-- ANA SEHIFE -->
+<div id="homePage" class="hidden">
+<h2 class="sec-title">Tədris <b>bölmələri</b></h2>
+<div class="bigcard math-bg"><span class="pill">📐 Riyazi Elmlər</span><h3>Riyaziyyat</h3><p>Riyazi qaydalar, izahlar və testlər</p><button class="enter" onclick="showSection('mathPage')">Daxil ol →</button></div>
+<div class="bigcard verbal-bg"><span class="pill">📚 Məntiq və Oxu</span><h3>Verbal</h3><p>Verbal dərslər və tapşırıqlar</p><button class="enter" onclick="showSection('verbalPage')">Daxil ol →</button></div>
+<div class="bigcard exam-bg"><span class="pill">📝 Sınaq və Praktika</span><h3>İmtahan sualları</h3><p>İmtahana hazırlıq üçün suallar</p><button class="enter" onclick="showSection('examPage')">Daxil ol →</button></div>
+<div class="card hidden" id="adminCard"><h2 style="text-align:left">Panel</h2><div id="adminList"></div></div>
 </div>
-<script>
-const VILLAGES={
-"Marneuli":["Qaçağan","Kosalar","Sadaxlı","Təzəkənd","Böyük Muğanlı","Kiçik Muğanlı","Qulari","Xutor-Lebisi","Algeti","Şaumyani","Başqa kənd"],
-"Qardabani":["Qardabani kəndi","Martkopi","Sartichala","Vaziani","Qaracalar","Norio","Başqa kənd"],
-"Bolnisi":["Bolnisi kəndi","Kazreti","Talaveri","Muşevani","Xidiskuri","Başqa kənd"],
-"Dmanisi":["Dmanisi kəndi","Qomareti","Başkeçid","Amamlo","Başqa kənd"],
-"Tetritskaro":["Tetritskaro kəndi","Manqilisi","Başqa kənd"],
-"Tsalka":["Tsalka kəndi","Başqa kənd"],
-"Rustavi":["Rustavi - şəhər içi","Başqa"],
-"Tbilisi":["Tbilisi - şəhər içi","Başqa"],
-"Başqa":["Başqa kənd"]
-};
-function updateVillages(){
-var city=document.getElementById('regCity').value;
-var sel=document.getElementById('regVillage');
-var list=VILLAGES[city]||["Başqa kənd"];
-sel.innerHTML='<option value="">Kənd seçin</option>'+list.map(v=>'<option>'+v+'</option>').join('');
-}
+<!-- RIYAZIYYAT -->
+<div id="mathPage" class="hidden"><button class="back" onclick="showSection('homePage')">← Geri</button><h2 class="sec-title">Riyaziyyat</h2><div class="subcard" style="background:linear-gradient(135deg,#2B6CF0,#00C6FF)"><h3>Natural ədədlər</h3><p>Saymaq üçün istifadə olunan ədədlər</p><button onclick="showEmpty()">Daxil ol →</button></div><div class="subcard" style="background:linear-gradient(135deg,#FF6B00,#FFB800)"><h3>Tam ədədlər</h3><p>Mənfi, müsbət ədədlər və sıfır</p><button onclick="showEmpty()">Daxil ol →</button></div></div>
+<!-- VERBAL -->
+<div id="verbalPage" class="hidden"><button class="back" onclick="showSection('homePage')">← Geri</button><h2 class="sec-title">Verbal</h2><div class="subcard" style="background:linear-gradient(135deg,#00B894,#00CEC9)"><h3>Analogiyalar</h3><p>Sözlər arası əlaqəni tap</p><button onclick="showEmpty()">Daxil ol →</button></div><div class="subcard" style="background:linear-gradient(135deg,#6C5CE7,#A29BFE)"><h3>Məntiq</h3><p>Məntiqi düşünmə tapşırıqları</p><button onclick="showEmpty()">Daxil ol →</button></div><div class="subcard" style="background:linear-gradient(135deg,#E17055,#FDCB6E)"><h3>Mətn</h3><p>Mətn anlama və suallar</p><button onclick="showEmpty()">Daxil ol →</button></div></div>
+<!-- IMTAN -->
+<div id="examPage" class="hidden"><button class="back" onclick="showSection('homePage')">← Geri</button><h2 class="sec-title">İmtahan sualları</h2><div id="yearList"></div></div>
+<!-- BOS -->
+<div id="emptyPage" class="hidden"><button class="back" onclick="backFromEmpty()">← Geri</button><div class="empty"><div style="font-size:50px">📚</div><h3 style="color:#1A2B4A;margin:10px 0">Hələ sual əlavə olunmayıb</h3><p>Bu bölməyə suallar tezliklə əlavə olunacaq.</p></div></div>
+<p style="text-align:center;color:#aaa;font-size:12px;margin-top:20px">© 2026 Qəbul İmtahanı • Hazırlayan: Haldun Məmmədov</p>
+</div><script>
+const VILLAGES={"Marneuli":["Qaçağan","Kosalar","Sadaxlı","Təzəkənd","Böyük Muğanlı","Kiçik Muğanlı","Qulari","Algeti","Şaumyani","Başqa kənd"],"Qardabani":["Martkopi","Sartichala","Vaziani","Qaracalar","Norio","Başqa kənd"],"Bolnisi":["Kazreti","Talaveri","Muşevani","Xidiskuri","Başqa kənd"],"Dmanisi":["Qomareti","Başkeçid","Amamlo","Başqa kənd"],"Tetritskaro":["Manqilisi","Başqa kənd"],"Tsalka":["Başqa kənd"],"Rustavi":["Şəhər içi","Başqa"],"Tbilisi":["Şəhər içi","Başqa"],"Başqa":["Başqa kənd"]};
+function updateVillages(){var city=document.getElementById('regCity').value;var sel=document.getElementById('regVillage');var list=VILLAGES[city]||["Başqa kənd"];sel.innerHTML='<option value="">Kənd seçin</option>'+list.map(v=>'<option>'+v+'</option>').join('')}
 function getUsers(){try{return JSON.parse(localStorage.getItem('zqi_users')||'[]')}catch(e){return[]}}
 function saveUsers(u){localStorage.setItem('zqi_users',JSON.stringify(u))}
 function getSession(){try{return JSON.parse(localStorage.getItem('zqi_session')||'null')}catch(e){return null}}
@@ -100,96 +121,86 @@ function setSession(s){localStorage.setItem('zqi_session',JSON.stringify(s))}
 function showToast(t){var el=document.getElementById('toast');el.textContent=t;el.style.display='block';setTimeout(()=>el.style.display='none',4000)}
 function showMsg(t,type){var m=document.getElementById('authMsg');m.textContent=t;m.className='msg '+(type||'err')}
 function normPhone(p){return String(p||'').replace(/\D/g,'')}
-function setTab(tab){
-document.getElementById('tabReg').className=tab==='reg'?'on':'';
-document.getElementById('tabLogin').className=tab==='login'?'on':'';
-document.getElementById('regForm').classList.toggle('hidden',tab!=='reg');
-document.getElementById('loginForm').classList.toggle('hidden',tab!=='login');
-document.getElementById('authTitle').textContent=tab==='reg'?'Qeydiyyat':'Daxil olun';
-document.getElementById('authMsg').className='msg';
-}
+function setTab(tab){document.getElementById('tabReg').className=tab==='reg'?'on':'';document.getElementById('tabLogin').className=tab==='login'?'on':'';document.getElementById('regForm').classList.toggle('hidden',tab!=='reg');document.getElementById('loginForm').classList.toggle('hidden',tab!=='login');document.getElementById('authTitle').textContent=tab==='reg'?'Qeydiyyat':'Daxil olun';document.getElementById('authMsg').className='msg'}
+let lastPage='homePage';
+function showSection(id){['homePage','mathPage','verbalPage','examPage','emptyPage'].forEach(x=>document.getElementById(x).classList.add('hidden'));document.getElementById(id).classList.remove('hidden');window.scrollTo({top:0,behavior:'smooth'})}
+function showEmpty(){lastPage=document.querySelector('#mathPage:not(.hidden)')?'mathPage':(document.querySelector('#verbalPage:not(.hidden)')?'verbalPage':'homePage');showSection('emptyPage')}
+function backFromEmpty(){showSection(lastPage)}
 function doRegister(){
-var user=document.getElementById('regUser').value.trim();
-var name=document.getElementById('regName').value.trim();
-var sur=document.getElementById('regSurname').value.trim();
-var phone=normPhone(document.getElementById('regPhone').value);
-var cls=document.getElementById('regClass').value;
-var city=document.getElementById('regCity').value;
-var village=document.getElementById('regVillage').value;
-var pass=document.getElementById('regPass').value;
-var agree=document.getElementById('agree').checked;
+var user=document.getElementById('regUser').value.trim();var name=document.getElementById('regName').value.trim();var sur=document.getElementById('regSurname').value.trim();var phone=normPhone(document.getElementById('regPhone').value);var cls=document.getElementById('regClass').value;var city=document.getElementById('regCity').value;var village=document.getElementById('regVillage').value;var pass=document.getElementById('regPass').value;var agree=document.getElementById('agree').checked;
 if(!user||!name||!sur||!phone||!cls||!city||!village||!pass){showMsg('Zəhmət olmasa hamısını doldur!','err');return}
 if(!agree){showMsg('Zəhmət olmasa şərtləri qəbul et!','err');return}
 if(pass.length<4){showMsg('Şifrə ən az 4 simvol olmalıdır!','err');return}
 var users=getUsers();
 if(users.find(u=>u.phone===phone||u.username===user)){showMsg('Bu nömrə / istifadəçi adı artıq var! Giriş et.','err');setTab('login');return}
-// YENİ: status = pending, dərhal girmir
-users.push({username:user,name:name,surname:sur,phone:phone,class:cls,city:city,village:village,pass:pass,blocked:false,status:'pending',created:Date.now()});
-saveUsers(users);
-showMsg('Qeydiyyat göndərildi ✅ Admin qəbul etdikdən sonra hesabınız aktiv olacaq.','wait');
-showToast('Admin qəbul etdikdən sonra hesabınız aktiv olacaq ⏳');
-document.getElementById('regForm').querySelectorAll('input,select').forEach(e=>{if(e.id!=='agree')e.value=''});
-document.getElementById('agree').checked=false;
+users.push({username:user,name:name,surname:sur,phone:phone,class:cls,city:city,village:village,pass:pass,blocked:false,status:'pending',created:Date.now()});saveUsers(users);
+// Qeydiyyatdan sonra dərhal gözləmə ekranı
+setSession({phone:phone,name:name,username:user,pending:true});
+showMsg('Qeydiyyat göndərildi ✅','wait');
+showToast('Admin təsdiq etdikdən sonra giriş edə biləcəksiniz');
+checkPending();
 }
 function doLogin(){
-var raw=document.getElementById('loginPhone').value.trim();
-var pass=document.getElementById('loginPass').value;
-if(raw==='admin'&&pass==='admin123'){setSession({phone:'admin',name:'Admin',isAdmin:true});showMsg('Admin girişi uğurludur ✅','ok');showToast('Admin girişi uğurludur ✅');updateUI();return}
-var phone=normPhone(raw);
-var users=getUsers();
-var u=users.find(x=>x.phone===phone||x.username===raw);
+var raw=document.getElementById('loginPhone').value.trim();var pass=document.getElementById('loginPass').value;
+// Admin girişi - yazı yoxdur, sadəcə gizli kod
+if(raw==='admin'&&pass==='admin123'){setSession({phone:'admin',name:'Admin',isAdmin:true});updateUI();return}
+var phone=normPhone(raw);var users=getUsers();var u=users.find(x=>x.phone===phone||x.username===raw);
 if(!u){showMsg('Hesab tapılmadı! Əvvəl qeydiyyatdan keç.','err');return}
-if(u.blocked){showBlocked();return}
-if(u.status==='pending'){showMsg('Hesabın hələ təsdiqlənməyib ⏳ Admin qəbul etdikdən sonra hesabınız aktiv olacaq.','wait');return}
+if(u.blocked){document.getElementById('blockedScreen').classList.add('show');return}
 if(u.pass!==pass){showMsg('Şifrə səhvdir!','err');return}
+if(u.status==='pending'){setSession({phone:u.phone,name:u.name,username:u.username,pending:true});checkPending();return}
 setSession({phone:u.phone,name:u.name,username:u.username});
-showMsg('Giriş uğurludur ✅ Xoş gəldin, '+u.name+'!','ok');
-showToast('Giriş uğurludur ✅');
+showMsg('Giriş uğurludur ✅','ok');showToast('Giriş uğurludur ✅');updateUI();
+}
+function checkPending(){
+var s=getSession();if(!s||!s.pending)return;
+document.getElementById('waitScreen').classList.add('show');
+}
+function closeSuccess(){
+document.getElementById('successScreen').classList.remove('show');
+var s=getSession();if(s){s.pending=false;setSession(s)}
 updateUI();
 }
-function logout(){localStorage.removeItem('zqi_session');document.getElementById('blockedScreen').classList.remove('show');updateUI();setTab('login');window.scrollTo({top:0,behavior:'smooth'})}
-function showBlocked(){document.getElementById('blockedScreen').classList.add('show')}
-function hideBlocked(){document.getElementById('blockedScreen').classList.remove('show')}
-function showAdmin(){
-var s=getSession();if(!s||!s.isAdmin){alert('Admin deyilsən!');return}
-document.getElementById('adminCard').classList.remove('hidden');
-renderAdmin();document.getElementById('adminCard').scrollIntoView({behavior:'smooth'});
+function logout(){localStorage.removeItem('zqi_session');document.getElementById('waitScreen').classList.remove('show');document.getElementById('successScreen').classList.remove('show');document.getElementById('blockedScreen').classList.remove('show');updateUI();setTab('login');window.scrollTo({top:0,behavior:'smooth'})}function renderAdmin(){
+var users=getUsers();var html=users.length?'<table><tr><th>Ad</th><th>Şəhər / Kənd</th><th>Vəziyyət</th><th>Qəbul / Bağla</th></tr>':'<p>Heç kim yoxdur.</p>';
+users.forEach((u,i)=>{var st=u.blocked?'🚫 Bağlı':(u.status==='pending'?'⏳ Gözləyir':'✅ Aktiv');html+='<tr><td>'+u.name+' '+(u.surname||'')+'<br><small>@'+(u.username||'')+' '+u.phone+'</small></td><td>'+(u.city||'')+' / '+(u.village||'')+'</td><td>'+st+'</td><td>'+(u.status==='pending'?'<button class="okbtn" onclick="approveUser('+i+')">✓</button> ':'')+'<button class="xbtn" onclick="blockUser('+i+')">×</button> '+(u.blocked?'<button class="unblock" onclick="unblockUser('+i+')">Aç</button>':'')+'</td></tr>'});
+if(users.length)html+='</table>';document.getElementById('adminList').innerHTML=html;
 }
-function renderAdmin(){
-var users=getUsers();
-var html=users.length?'<table><tr><th>Ad / İstifadəçi</th><th>Şəhər / Kənd</th><th>Sinif</th><th>Vəziyyət</th><th>Qəbul / Bağla</th></tr>':'<p>Heç bir istifadəçi yoxdur.</p>';
-users.forEach((u,i)=>{
-var status = u.blocked ? '🚫 Bağlı' : (u.status==='pending' ? '⏳ Gözləyir' : '✅ Aktiv');
-html+='<tr><td>'+u.name+' '+(u.surname||'')+'<br><small>@'+(u.username||'')+'<br>'+u.phone+'</small></td><td>'+(u.city||'')+'<br><small>'+(u.village||'')+'</small></td><td>'+(u.class||'')+'</td><td>'+status+'</td><td>'+(u.status==='pending'?'<button class="okbtn" onclick="approveUser('+i+')" title="Qəbul et">✓</button> ':'')+'<button class="xbtn" onclick="blockUser('+i+')" title="Bağla">×</button> '+(u.blocked?'<button class="unblock" onclick="unblockUser('+i+')">Aç</button>':'')+'</td></tr>'});
-if(users.length)html+='</table>';
-document.getElementById('adminList').innerHTML=html;
-}
-function approveUser(i){
-var users=getUsers();users[i].status='active';users[i].blocked=false;saveUsers(users);
-localStorage.setItem('zqi_approve_signal',JSON.stringify({phone:users[i].phone,at:Date.now()}));
-showToast('Hesab qəbul edildi ✅');renderAdmin();
-}
-function blockUser(i){
-var users=getUsers();if(!confirm(users[i].name+' hesabı bağlansın / rədd edilsin?'))return;
-users[i].blocked=true;saveUsers(users);
-var s=getSession();if(s&&s.phone===users[i].phone){showBlocked()}
-localStorage.setItem('zqi_block_signal',JSON.stringify({phone:users[i].phone,at:Date.now()}));
-showToast('Hesab bağlandı 🚫');renderAdmin();
-}
+function approveUser(i){var users=getUsers();users[i].status='active';users[i].blocked=false;saveUsers(users);showToast('Hesab qəbul edildi ✅');renderAdmin()}
+function blockUser(i){var users=getUsers();if(!confirm(users[i].name+' bağlansın?'))return;users[i].blocked=true;saveUsers(users);var s=getSession();if(s&&s.phone===users[i].phone){document.getElementById('blockedScreen').classList.add('show')}showToast('Hesab bağlandı 🚫');renderAdmin()}
 function unblockUser(i){var users=getUsers();users[i].blocked=false;if(users[i].status==='pending')users[i].status='active';saveUsers(users);renderAdmin();showToast('Hesab açıldı ✅')}
 function updateUI(){
 var s=getSession();var users=getUsers();
-if(s&&!s.isAdmin){var me=users.find(u=>u.phone===s.phone);if(me&&me.blocked){showBlocked();return}}
-hideBlocked();var logged=!!s;
-document.getElementById('authCard').style.display=logged?'none':'block';
-document.getElementById('welcomeCard').classList.toggle('hidden',!logged);
-document.getElementById('logoutBtn').classList.toggle('hidden',!logged);
-document.getElementById('adminBtn').classList.toggle('hidden',!(s&&s.isAdmin));
+document.getElementById('waitScreen').classList.remove('show');
+// Blok yoxla
+if(s&&!s.isAdmin){var me=users.find(u=>u.phone===s.phone);if(me&&me.blocked){document.getElementById('blockedScreen').classList.add('show');return}}
+document.getElementById('blockedScreen').classList.remove('show');
+var logged=!!s&&!s.pending;
+var isPending=!!(s&&s.pending);
+document.getElementById('authCard').style.display=(logged||isPending)?'none':'block';
+document.getElementById('heroBox').style.display=(logged||isPending)?'none':'block';
+document.getElementById('homePage').classList.toggle('hidden',!logged);
+document.getElementById('logoutBtn').classList.toggle('hidden',!s);
 document.getElementById('adminCard').classList.toggle('hidden',!(s&&s.isAdmin));
-if(s){document.getElementById('userNameTop').textContent='👋 '+s.name;document.getElementById('welcomeText').textContent='Xoş gəldin, '+s.name+'! 🎉';var mu=users.find(u=>u.phone===s.phone);document.getElementById('welcomeSub').textContent=mu?('Şəhər: '+mu.city+' | Kənd: '+mu.village+' | Sinif: '+mu.class):'';if(s.isAdmin)renderAdmin()}else{document.getElementById('userNameTop').textContent=''}
+if(isPending){document.getElementById('waitScreen').classList.add('show')}
+if(s){document.getElementById('userNameTop').textContent='👋 '+s.name;if(s.isAdmin){document.getElementById('homePage').classList.remove('hidden');document.getElementById('authCard').style.display='none';document.getElementById('heroBox').style.display='none';renderAdmin()}}else{document.getElementById('userNameTop').textContent=''}
 }
-setInterval(()=>{var s=getSession();if(!s||s.isAdmin)return;var users=getUsers();var me=users.find(u=>u.phone===s.phone);if(me&&me.blocked)showBlocked()},2000);
-updateUI();
+// İllər 2011-2026
+function renderYears(){var h='';for(var y=2026;y>=2011;y--){h+='<div class="yearcard"><div>'+y+'-ci il <br><span>İmtahan sualları</span></div><button onclick="showEmptyExam()">Daxil ol</button></div>'}document.getElementById('yearList').innerHTML=h}
+function showEmptyExam(){lastPage='examPage';showSection('emptyPage')}
+// Hər 2 saniyə yoxla: admin məni qəbul edib?
+setInterval(()=>{
+var s=getSession();if(!s||!s.pending)return;
+var users=getUsers();var me=users.find(u=>u.phone===s.phone);
+if(!me)return;
+if(me.blocked){document.getElementById('waitScreen').classList.remove('show');document.getElementById('blockedScreen').classList.add('show');return}
+if(me.status==='active'){
+document.getElementById('waitScreen').classList.remove('show');
+document.getElementById('successScreen').classList.add('show');
+s.pending=false;setSession(s);
+}
+},2000);
+renderYears();updateUI();
 </script>
 </body>
 </html>
